@@ -1,2 +1,2 @@
 # LearnJavaApp
-This project maded for learn basic Java.
+This project is made for study of java.
