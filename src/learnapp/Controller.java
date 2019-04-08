@@ -1,4 +1,4 @@
-package sample;
+package learnapp;
 
 public class Controller {
 }
