@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="stackParentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.MenuController">
+   <children>
+      <AnchorPane fx:id="anchorRoot" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #999999;">
+         <children>
+            <Text layoutX="279.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Меню" wrappingWidth="42.1591796875" />
+            <Button fx:id="sectionButton" layoutX="241.0" layoutY="119.0" mnemonicParsing="false" onAction="#onSelectSectionButton" prefHeight="27.0" prefWidth="118.0" text="1" />
+            <Button layoutX="241.0" layoutY="160.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="2" />
+            <Button layoutX="241.0" layoutY="200.0" mnemonicParsing="false" onAction="#onSelectSectionButton" prefHeight="27.0" prefWidth="118.0" text="3" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
