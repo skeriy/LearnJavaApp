@@ -6,6 +6,7 @@
       "sub_theme": {
 
         "1": {
+          "id": "1",
           "name": "subtheme 1.1",
           "theory": {
             "1": "that 1.1.1 theory",
@@ -19,6 +20,7 @@
           }
         },
         "2": {
+          "id": "2",
           "name": "subtheme 1.2",
           "theory": {
             "1": "that 1.2.1 theory",
@@ -38,6 +40,7 @@
       "sub_theme": {
 
         "1": {
+          "id": "1",
           "name": "subtheme 2.1",
           "theory": {
             "1": "that 2.1.1 theory",
@@ -51,6 +54,7 @@
           }
         },
         "2": {
+          "id": "2",
           "name": "subtheme 2.2",
           "theory": {
             "1": "that 2.2.1 theory",
@@ -64,6 +68,7 @@
           }
         },
         "3": {
+          "id": "3",
           "name": "subtheme 2.3",
           "theory": {
             "1": "that 2.3.1 theory",
@@ -83,6 +88,7 @@
       "sub_theme": {
 
         "1": {
+          "id": "1",
           "name": "subtheme 3.1",
           "theory": {
             "1": "that 3.1.1 theory",
@@ -96,9 +102,9 @@
           }
         },
         "2": {
+          "id": "2",
           "name": "subtheme 3.2",
           "theory": {
-            "name": "subtheme 3.2",
             "1": "that 3.2.1 theory",
             "2": "that 3.2.2 theory",
             "3": "that 3.2.3 theory"

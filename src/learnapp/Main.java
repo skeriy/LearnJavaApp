@@ -17,6 +17,7 @@ public class Main extends Application {
 
         FXRouter.when("Themes", "view/themes.fxml");
         FXRouter.when("SubThemes", "view/subThemes.fxml");
+        FXRouter.when("Theory", "view/theory.fxml");
         FXRouter.when("EX1", "view/ex1.fxml");
         FXRouter.when("EX2", "view/ex2.fxml");
         FXRouter.when("EX3", "view/ex3.fxml");

@@ -8,12 +8,15 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import learnapp.service.ProgressService;
+import learnapp.service.RouteService;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class SubThemesController {
 
@@ -33,29 +36,38 @@ public class SubThemesController {
     }
 
     public void initialize() {
+        initSubThemes();
+    }
+
+    private void initSubThemes() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             byte[] jsonData = Files.readAllBytes(Paths.get("data/data.json"));
             JsonNode rootNode = objectMapper.readTree(jsonData);
             JsonNode subThemeNode = rootNode.path("theme").path((String) FXRouter.getData()).path("sub_theme");
 
-            ArrayList<String> subThemesNames = new ArrayList<>();
+            Map<String, String> subThemesNames = new HashMap<>();
             Iterator<JsonNode> subThemesIt = subThemeNode.elements();
+
             while (subThemesIt.hasNext()) {
                 JsonNode subTheme = subThemesIt.next();
-                subThemesNames.add(subTheme.get("name").asText());
+                subThemesNames.put(subTheme.get("id").asText(), subTheme.get("name").asText());
             }
+
             ArrayList<Button> subThemesButtons = new ArrayList<>();
-            for (String name : subThemesNames) {
-                Button button = new Button(name);
+            for (Map.Entry<String, String> entry : subThemesNames.entrySet()) {
+                Button button = new Button(entry.getValue());
                 button.setPrefWidth(subThemesVBox.getPrefWidth());
+
                 button.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                     try {
-                        FXRouter.goTo("EX1");
+                        RouteService.setSubTheme(entry.getKey());
+                        FXRouter.goTo("Theory", entry.getKey());
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
                 });
+
                 subThemesButtons.add(button);
             }
             for (Button button : subThemesButtons) {
@@ -64,14 +76,5 @@ public class SubThemesController {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-    }
-
-    private ArrayList<String> getFildNames(JsonNode node) {
-        Iterator<String> fieldNames = node.fieldNames();
-        ArrayList<String> result = new ArrayList<>();
-        while (fieldNames.hasNext()) {
-            result.add(fieldNames.next());
-        }
-        return result;
     }
 }
