@@ -1,5 +1,6 @@
 package learnapp.controller;
 
+import com.github.fxrouter.FXRouter;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -29,8 +30,8 @@ public class TaskController {
     @FXML
     public void onBackButton() throws IOException{
         System.out.println("backButton");
-
-        Parent root = FXMLLoader.load(getClass().getResource("/learnapp/view/menu.fxml"));
+        FXRouter.goTo("Menu");
+        /*Parent root = FXMLLoader.load(getClass().getResource("/learnapp/view/themes.fxml"));
         Scene scene = backButton.getScene();
 
         root.translateXProperty().set(scene.getWidth());
@@ -47,7 +48,7 @@ public class TaskController {
             parentContainer.getChildren().remove(taskAnchorRoot);
         });
 
-        timeline.play();
+        timeline.play();*/
 
     }
 }

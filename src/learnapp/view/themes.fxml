@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.ThemesController">
+   <children>
+      <Text layoutX="361.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Темы">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <VBox layoutX="282.0" layoutY="171.0" prefHeight="213.0" prefWidth="235.0">
+         <children>
+            <Button fx:id="Theme1Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme1" prefHeight="26.0" prefWidth="325.0" text="1. Основные понятия">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Theme2Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme2" prefHeight="26.0" prefWidth="315.0" text="2. Условные операторы и циклы">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Theme3Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme3" prefHeight="26.0" prefWidth="315.0" text="3. Массивы">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Theme4Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme4" prefHeight="26.0" prefWidth="315.0" text="4. Классы и объекты">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Theme5Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme5" prefHeight="26.0" prefWidth="315.0" text="5. Работа со строками">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Theme6Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme6" prefHeight="26.0" prefWidth="315.0" text="6. Списки">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Theme7Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme7" prefHeight="26.0" prefWidth="315.0" text="7. Работа с файлами">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
