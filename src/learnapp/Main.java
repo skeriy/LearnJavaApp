@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import learnapp.service.ProgressService;
 
 public class Main extends Application {
 
@@ -21,6 +22,8 @@ public class Main extends Application {
         FXRouter.when("EX3", "view/ex3.fxml");
         FXRouter.when("EX4", "view/ex4.fxml");
         FXRouter.when("EX5", "view/ex5.fxml");
+
+        ProgressService.init();
 
         FXRouter.goTo("Themes");
     }

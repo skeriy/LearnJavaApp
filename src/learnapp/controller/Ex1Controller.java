@@ -48,7 +48,7 @@ public class Ex1Controller {
 
     @FXML
     public void onBackToMenu() throws IOException {
-        FXRouter.goTo("Menu");
+        FXRouter.goTo("Themes");
     }
 
     @FXML

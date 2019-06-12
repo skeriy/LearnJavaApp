@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="learnapp.controller.SubThemesController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.SubThemesController">
+   <children>
+      <Button fx:id="backToMenuBtn" layoutY="1.0" mnemonicParsing="false" onAction="#onBackToMenu" text="backToMenu" />
+      <VBox fx:id="subThemesVBox" layoutX="170.0" layoutY="105.0" prefHeight="333.0" prefWidth="460.0" />
+   </children>
 </AnchorPane>

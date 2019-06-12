@@ -44,31 +44,31 @@ public class ThemesController {
 
     @FXML
     public void onTheme1() throws IOException {
-        FXRouter.goTo("EX1");
+        FXRouter.goTo("SubThemes", "1");
     }
     @FXML
     public void onTheme2() throws IOException {
-        FXRouter.goTo("EX1");
+        FXRouter.goTo("SubThemes", "2");
     }
     @FXML
     public void onTheme3() throws IOException {
-        FXRouter.goTo("EX1");
+        FXRouter.goTo("SubThemes", "3");
     }
     @FXML
     public void onTheme4() throws IOException {
-        FXRouter.goTo("EX1");
+        FXRouter.goTo("SubThemes", "4");
     }
     @FXML
     public void onTheme5() throws IOException {
-        FXRouter.goTo("EX1");
+        FXRouter.goTo("SubThemes", "5");
     }
     @FXML
     public void onTheme6() throws IOException {
-        FXRouter.goTo("EX1");
+        FXRouter.goTo("SubThemes", "6");
     }
     @FXML
     public void onTheme7() throws IOException {
-        FXRouter.goTo("EX1");
+        FXRouter.goTo("SubThemes", "7");
     }
 
 }
