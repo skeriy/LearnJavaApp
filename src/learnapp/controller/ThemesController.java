@@ -45,37 +45,37 @@ public class ThemesController {
 
     @FXML
     public void onTheme1() throws IOException {
-        RouteService.setTheme("1");
+        RouteService.setTheme(1);
         FXRouter.goTo("SubThemes", "1");
     }
     @FXML
     public void onTheme2() throws IOException {
-        RouteService.setTheme("2");
+        RouteService.setTheme(2);
         FXRouter.goTo("SubThemes", "2");
     }
     @FXML
     public void onTheme3() throws IOException {
-        RouteService.setTheme("3");
+        RouteService.setTheme(3);
         FXRouter.goTo("SubThemes", "3");
     }
     @FXML
     public void onTheme4() throws IOException {
-        RouteService.setTheme("4");
+        RouteService.setTheme(4);
         FXRouter.goTo("SubThemes", "4");
     }
     @FXML
     public void onTheme5() throws IOException {
-        RouteService.setTheme("5");
+        RouteService.setTheme(5);
         FXRouter.goTo("SubThemes", "5");
     }
     @FXML
     public void onTheme6() throws IOException {
-        RouteService.setTheme("6");
+        RouteService.setTheme(6);
         FXRouter.goTo("SubThemes", "6");
     }
     @FXML
     public void onTheme7() throws IOException {
-        RouteService.setTheme("7");
+        RouteService.setTheme(7);
         FXRouter.goTo("SubThemes", "7");
     }
 

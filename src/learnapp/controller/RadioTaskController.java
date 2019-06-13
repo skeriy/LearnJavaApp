@@ -1,22 +1,29 @@
 package learnapp.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.github.fxrouter.FXRouter;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import learnapp.pojo.Practice;
+import learnapp.service.DataService;
+import learnapp.service.RouteService;
+import learnapp.service.UtilService;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Map;
 
-public class Ex1Controller {
+
+public class RadioTaskController {
     @FXML
     private Button backToMenuBtn;
 
     @FXML
     private VBox radioBtnBox;
+
+    @FXML
+    private Text radioExText;
 
     @FXML
     private RadioButton rad1;
@@ -30,21 +37,6 @@ public class Ex1Controller {
     @FXML
     private RadioButton rad4;
 
-    @FXML
-    private VBox checkBtnBox;
-
-    @FXML
-    private CheckBox check1;
-
-    @FXML
-    private CheckBox check2;
-
-    @FXML
-    private CheckBox check3;
-
-    @FXML
-    private CheckBox check4;
-
 
     @FXML
     public void onBackToMenu() throws IOException {
@@ -53,19 +45,30 @@ public class Ex1Controller {
 
     @FXML
     public void onCheck() {
+        if (radioAnswer.equals(succesAnswer)) {
+            System.out.println("OK");
+        } else {
+            System.out.println("NO");
+        }
         System.out.println("In check radioAnswer: " + radioAnswer);
-        checkCheckBoxes();
-        System.out.println("In check CheckBoxAnswer: " + checkBoxAnswersToString());
     }
 
     private String radioAnswer;
-    private ArrayList<Integer> checkBoxAnswers = new ArrayList<>();
+    private String succesAnswer;
 
     public void initialize() {
         initializeRadioButtons();
     }
 
     private void initializeRadioButtons() {
+        JsonNode rootNode = DataService.getDataRootNode();
+        JsonNode subThemeNode = rootNode.path("theme").path(RouteService.getTheme().toString()).path("sub_theme").path(RouteService.getSubTheme().toString());
+        JsonNode practice = subThemeNode.path("practice").get(RouteService.getPractice().toString());
+
+        Practice practiceObject = UtilService.convertJsonNodeToPractice(practice);
+
+        succesAnswer = practiceObject.getSucces().get(0);
+
         ToggleGroup toggleGroup= new ToggleGroup();
         toggleGroup.selectedToggleProperty().addListener((ov, old_toggle, new_toggle) -> {
             if (toggleGroup.getSelectedToggle() != null) {
@@ -74,38 +77,21 @@ public class Ex1Controller {
                 System.out.println("Button: " + radioAnswer);
             }
         });
+
         rad1.setToggleGroup(toggleGroup);
         rad2.setToggleGroup(toggleGroup);
         rad3.setToggleGroup(toggleGroup);
         rad4.setToggleGroup(toggleGroup);
 
-        rad1.setSelected(true);
-    }
+        rad1.setText(practiceObject.getQuestions().get(0));
+        rad2.setText(practiceObject.getQuestions().get(1));
+        rad3.setText(practiceObject.getQuestions().get(2));
+        rad4.setText(practiceObject.getQuestions().get(3));
 
-    private void checkCheckBoxes(){
-        checkBoxAnswers.clear();
+        radioExText.setText(practiceObject.getText());
 
-        if (check1.isSelected()){
-            checkBoxAnswers.add(1);
-        }
-        if (check2.isSelected()){
-            checkBoxAnswers.add(2);
-        }
-        if (check3.isSelected()){
-            checkBoxAnswers.add(3);
-        }
-        if (check4.isSelected()){
-            checkBoxAnswers.add(4);
-        }
-    }
+        System.out.println();
 
-    private String checkBoxAnswersToString(){
-        StringBuilder result = new StringBuilder();
-        for (Integer answer : checkBoxAnswers) {
-            result.append(answer);
-            result.append(" ");
-        }
-        return result.toString();
     }
 
 }

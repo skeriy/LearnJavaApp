@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import learnapp.pojo.Progress;
+import learnapp.service.DataService;
 import learnapp.service.ProgressService;
 import learnapp.service.RouteService;
 
@@ -40,41 +42,61 @@ public class SubThemesController {
     }
 
     private void initSubThemes() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            byte[] jsonData = Files.readAllBytes(Paths.get("data/data.json"));
-            JsonNode rootNode = objectMapper.readTree(jsonData);
-            JsonNode subThemeNode = rootNode.path("theme").path((String) FXRouter.getData()).path("sub_theme");
+        JsonNode rootNode = DataService.getDataRootNode();
+        JsonNode subThemeNode = rootNode.path("theme").path((String) FXRouter.getData()).path("sub_theme");
 
-            Map<String, String> subThemesNames = new HashMap<>();
-            Iterator<JsonNode> subThemesIt = subThemeNode.elements();
+        Map<String, String> subThemesNames = new HashMap<>();
+        Iterator<JsonNode> subThemesIt = subThemeNode.elements();
 
-            while (subThemesIt.hasNext()) {
-                JsonNode subTheme = subThemesIt.next();
-                subThemesNames.put(subTheme.get("id").asText(), subTheme.get("name").asText());
-            }
-
-            ArrayList<Button> subThemesButtons = new ArrayList<>();
-            for (Map.Entry<String, String> entry : subThemesNames.entrySet()) {
-                Button button = new Button(entry.getValue());
-                button.setPrefWidth(subThemesVBox.getPrefWidth());
-
-                button.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                    try {
-                        RouteService.setSubTheme(entry.getKey());
-                        FXRouter.goTo("Theory", entry.getKey());
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                });
-
-                subThemesButtons.add(button);
-            }
-            for (Button button : subThemesButtons) {
-                subThemesVBox.getChildren().add(button);
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        while (subThemesIt.hasNext()) {
+            JsonNode subTheme = subThemesIt.next();
+            subThemesNames.put(subTheme.get("id").asText(), subTheme.get("name").asText());
         }
+
+        ArrayList<Button> subThemesButtons = new ArrayList<>();
+        for (Map.Entry<String, String> entry : subThemesNames.entrySet()) {
+            Button button = new Button(entry.getValue());
+            button.setPrefWidth(subThemesVBox.getPrefWidth());
+
+            button.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                try {
+                    String subThemeId = entry.getKey();
+                    RouteService.setSubTheme(Integer.valueOf(subThemeId));
+                    calculateSubThemesTheoryAndPractice(subThemeId);
+
+                    RouteService.setTheory(RouteService.getMinTheory());
+                    RouteService.setPractice(RouteService.getMinPractice());
+                    FXRouter.goTo("theory", entry.getKey());
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            });
+
+            subThemesButtons.add(button);
+        }
+        for (Button button : subThemesButtons) {
+            subThemesVBox.getChildren().add(button);
+        }
+
+    }
+
+    private void calculateSubThemesTheoryAndPractice(String subThemeId) {
+        int maxTheory = 0;
+        int maxPractice = 0;
+
+        Iterator<JsonNode> theory = DataService.getDataRootNode().path("theme").path((String) FXRouter.getData()).path("sub_theme").path(subThemeId).path("theory").elements();
+        Iterator<JsonNode> practice = DataService.getDataRootNode().path("theme").path((String) FXRouter.getData()).path("sub_theme").path(subThemeId).path("practice").elements();
+
+        while (theory.hasNext()) {
+            theory.next();
+            maxTheory++;
+        }
+
+        while (practice.hasNext()) {
+            practice.next();
+            maxPractice++;
+        }
+        RouteService.setMaxTheory(maxTheory);
+        RouteService.setMaxPractice(maxPractice);
     }
 }

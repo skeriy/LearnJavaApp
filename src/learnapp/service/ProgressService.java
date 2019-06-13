@@ -14,14 +14,6 @@ public class ProgressService {
     private static int practice;
     private static String currentState;
 
-    public static String getCurrentState() {
-        return currentState;
-    }
-
-    public static void setCurrentState(String currentState) {
-        ProgressService.currentState = currentState;
-    }
-
     public static void init() {
         try {
             byte[] jsonData = Files.readAllBytes(Paths.get("data/progress.json"));
@@ -37,6 +29,34 @@ public class ProgressService {
             ex.printStackTrace();
         }
 
+    }
+
+    public static void switchState() {
+        currentState = currentState.equals("theory") ? "practice" : "theory";
+    }
+
+    public static void incPractice() {
+        theme++;
+    }
+
+    public static void incTheme() {
+        subTheme++;
+    }
+
+    public static void incSubTheme() {
+        theory++;
+    }
+
+    public static void incTheory() {
+        practice++;
+    }
+
+    public static String getCurrentState() {
+        return currentState;
+    }
+
+    public static void setCurrentState(String currentState) {
+        ProgressService.currentState = currentState;
     }
 
     public static int getTheme() {

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.Ex1Controller">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.RadioTaskController">
    <children>
       <Button fx:id="backToMenuBtn" layoutY="1.0" mnemonicParsing="false" onAction="#onBackToMenu" text="backToMenu" />
-      <VBox fx:id="radioBtnBox" layoutX="281.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0">
+      <VBox fx:id="radioBtnBox" layoutX="104.0" layoutY="403.0" prefHeight="73.0" prefWidth="491.0">
          <children>
             <RadioButton fx:id="rad1" mnemonicParsing="false" text="r1" />
             <RadioButton fx:id="rad2" mnemonicParsing="false" text="r2" />
@@ -17,13 +18,10 @@
             <RadioButton fx:id="rad4" mnemonicParsing="false" text="r4" />
          </children></VBox>
       <Button fx:id="checkBtn" layoutX="709.0" layoutY="544.0" mnemonicParsing="false" onAction="#onCheck" text="Check" />
-      <VBox fx:id="checkBtnBox" layoutX="381.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0">
+      <FlowPane layoutX="104.0" layoutY="46.0" prefHeight="330.0" prefWidth="622.0">
          <children>
-            <CheckBox fx:id="check1" mnemonicParsing="false" text="Check1" />
-            <CheckBox fx:id="check2" mnemonicParsing="false" text="Check2" />
-            <CheckBox fx:id="check3" mnemonicParsing="false" text="Check3" />
-            <CheckBox fx:id="check4" mnemonicParsing="false" text="Check4" />
+            <Text fx:id="radioExText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
          </children>
-      </VBox>
+      </FlowPane>
    </children>
 </AnchorPane>

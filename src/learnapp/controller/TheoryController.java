@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
+import learnapp.service.DataService;
+import learnapp.service.ProgressService;
 import learnapp.service.RouteService;
 
 import java.io.IOException;
@@ -34,32 +36,54 @@ public class TheoryController {
 
     @FXML
     public void onBackToSubThemes() throws IOException{
-        FXRouter.goTo("SubThemes", RouteService.getTheme());
+        FXRouter.goTo("SubThemes", RouteService.getTheme().toString());
     }
 
     @FXML
     public void onGoToPractice() {
+        try {
+            JsonNode rootNode = DataService.getDataRootNode();
+            JsonNode subThemeNode = rootNode.path("theme").path(RouteService.getTheme().toString()).path("sub_theme").path(RouteService.getSubTheme().toString());
+            JsonNode practice = subThemeNode.path("practice").get(RouteService.getTheory().toString());
 
+            switch (practice.get("type").asText()){
+                case DataService.RADIO_TASK:
+                    FXRouter.goTo("RadioTask");
+                    break;
+                case DataService.CHECKBOX_TASK:
+                    FXRouter.goTo("CheckBoxTask");
+                    break;
+                case DataService.INPUT_TEXT_TASK:
+                    FXRouter.goTo("InputTextTask");
+                    break;
+                case DataService.DRAG_DROP_TASK:
+                    FXRouter.goTo("DragDropTask");
+                    break;
+                case DataService.PROGRAM_LIST_TASK:
+                    FXRouter.goTo("ProgramListTask");
+                    break;
+            }
+
+            RouteService.incTheory();
+
+            System.out.println();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void initialize() {
         initTheory();
     }
 
-    public void initTheory() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            byte[] jsonData = Files.readAllBytes(Paths.get("data/data.json"));
-            JsonNode rootNode = objectMapper.readTree(jsonData);
-            JsonNode subThemeNode = rootNode.path("theme").path(RouteService.getTheme()).path("sub_theme").path(RouteService.getSubTheme());
+    private void initTheory() {
+        JsonNode rootNode = DataService.getDataRootNode();
+        JsonNode subThemeNode = rootNode.path("theme").path(RouteService.getTheme().toString()).path("sub_theme").path(RouteService.getSubTheme().toString());
 
-            JsonNode theoryNode = subThemeNode.path("theory");
+        JsonNode theoryNode = subThemeNode.path("theory");
+        theoryText.setText(theoryNode.get(RouteService.getTheory().toString()).asText());
 
-            theoryText.setText(theoryNode.get("1").asText());
+        System.out.println();
 
-            System.out.println();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
     }
 }

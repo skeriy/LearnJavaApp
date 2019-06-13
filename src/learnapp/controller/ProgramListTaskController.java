@@ -1,5 +1,6 @@
 package learnapp.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.github.fxrouter.FXRouter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,15 +18,18 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import learnapp.pojo.Practice;
+import learnapp.service.DataService;
+import learnapp.service.RouteService;
+import learnapp.service.UtilService;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ex2Controller {
+public class ProgramListTaskController {
     @FXML
     private VBox draggableVbox;
 
@@ -36,23 +40,39 @@ public class Ex2Controller {
     private Button checkBtn;
 
     @FXML
+    private Text programListExText;
+
+    @FXML
     public void onBackToMenu() throws IOException {
         FXRouter.goTo("Themes");
     }
 
     @FXML
     public void onCheck() {
-        StringBuilder result = new StringBuilder();
-        for (String answer : answersObsList) {
-            result.append(answer).append(" ");
+        boolean result = true;
+        for (int i = 0; i < answersObsList.size(); i++) {
+            String answer = answersObsList.get(i);
+            if (!answer.equals(practiceObject.getSucces().get(i))) {
+                result = false;
+            }
         }
-        System.out.println("Check: " + result);
+        System.out.println("on check: " + result);
     }
 
-    private ObservableList<String> answersObsList = FXCollections.observableArrayList("1", "2", "3", "4");
-    private ObservableList<Pane> questionObsList = FXCollections.observableArrayList();
+    private ObservableList<String> answersObsList = FXCollections.observableArrayList();
+    private Practice practiceObject;
 
     public void initialize() {
+
+        JsonNode rootNode = DataService.getDataRootNode();
+        JsonNode subThemeNode = rootNode.path("theme").path(RouteService.getTheme().toString()).path("sub_theme").path(RouteService.getSubTheme().toString());
+        JsonNode practice = subThemeNode.path("practice").get(RouteService.getPractice().toString());
+
+        practiceObject = UtilService.convertJsonNodeToPractice(practice);
+
+        programListExText.setText(practiceObject.getText());
+
+        answersObsList.addAll(practiceObject.getQuestions());
 
         ListView<String> listView = new ListView<>(answersObsList);
         listView.setCellFactory(param -> new AnswerCell());

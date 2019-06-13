@@ -1,41 +1,69 @@
 package learnapp.service;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 public class RouteService {
-    private static String theme;
-    private static String subTheme;
-    private static String theory;
-    private static String practice;
+    private static Integer theme;
+    private static Integer subTheme;
+    private static Integer theory;
+    private static Integer practice;
     private static String currentState;
 
-    public static String getTheme() {
+    private static Integer minTheory = 1;
+    private static Integer minPractice = 1;
+    private static Integer maxTheory;
+    private static Integer maxPractice;
+
+    public static void switchState() {
+        currentState = currentState.equals("theory") ? "practice" : "theory";
+    }
+
+    public static void incPractice() {
+        theme++;
+    }
+
+    public static void incTheme() {
+        subTheme++;
+    }
+
+    public static void incSubTheme() {
+        theory++;
+    }
+
+    public static void incTheory() {
+        practice++;
+    }
+
+    public static Integer getTheme() {
         return theme;
     }
 
-    public static void setTheme(String theme) {
+    public static void setTheme(Integer theme) {
         RouteService.theme = theme;
     }
 
-    public static String getSubTheme() {
+    public static Integer getSubTheme() {
         return subTheme;
     }
 
-    public static void setSubTheme(String subTheme) {
+    public static void setSubTheme(Integer subTheme) {
         RouteService.subTheme = subTheme;
     }
 
-    public static String getTheory() {
+    public static Integer getTheory() {
         return theory;
     }
 
-    public static void setTheory(String theory) {
+    public static void setTheory(Integer theory) {
         RouteService.theory = theory;
     }
 
-    public static String getPractice() {
+    public static Integer getPractice() {
         return practice;
     }
 
-    public static void setPractice(String practice) {
+    public static void setPractice(Integer practice) {
         RouteService.practice = practice;
     }
 
@@ -45,5 +73,37 @@ public class RouteService {
 
     public static void setCurrentState(String currentState) {
         RouteService.currentState = currentState;
+    }
+
+    public static Integer getMinTheory() {
+        return minTheory;
+    }
+
+    public static void setMinTheory(Integer minTheory) {
+        RouteService.minTheory = minTheory;
+    }
+
+    public static Integer getMaxTheory() {
+        return maxTheory;
+    }
+
+    public static void setMaxTheory(Integer maxTheory) {
+        RouteService.maxTheory = maxTheory;
+    }
+
+    public static Integer getMinPractice() {
+        return minPractice;
+    }
+
+    public static void setMinPractice(Integer minPractice) {
+        RouteService.minPractice = minPractice;
+    }
+
+    public static Integer getMaxPractice() {
+        return maxPractice;
+    }
+
+    public static void setMaxPractice(Integer maxPractice) {
+        RouteService.maxPractice = maxPractice;
     }
 }
