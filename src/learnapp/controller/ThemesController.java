@@ -25,6 +25,9 @@ public class ThemesController {
     private AnchorPane anchorRoot;
 
     @FXML
+    private Button progressToDefaultBtn;
+
+    @FXML
     private Button Theme1Btn;
     @FXML
     private Button Theme2Btn;
@@ -44,39 +47,44 @@ public class ThemesController {
     }
 
     @FXML
+    public void onProgressToDefault() {
+
+    }
+
+    @FXML
     public void onTheme1() throws IOException {
         RouteService.setTheme(1);
-        FXRouter.goTo("SubThemes", "1");
+        FXRouter.goTo("SubThemes");
     }
     @FXML
     public void onTheme2() throws IOException {
         RouteService.setTheme(2);
-        FXRouter.goTo("SubThemes", "2");
+        FXRouter.goTo("SubThemes");
     }
     @FXML
     public void onTheme3() throws IOException {
         RouteService.setTheme(3);
-        FXRouter.goTo("SubThemes", "3");
+        FXRouter.goTo("SubThemes");
     }
     @FXML
     public void onTheme4() throws IOException {
         RouteService.setTheme(4);
-        FXRouter.goTo("SubThemes", "4");
+        FXRouter.goTo("SubThemes");
     }
     @FXML
     public void onTheme5() throws IOException {
         RouteService.setTheme(5);
-        FXRouter.goTo("SubThemes", "5");
+        FXRouter.goTo("SubThemes");
     }
     @FXML
     public void onTheme6() throws IOException {
         RouteService.setTheme(6);
-        FXRouter.goTo("SubThemes", "6");
+        FXRouter.goTo("SubThemes");
     }
     @FXML
     public void onTheme7() throws IOException {
         RouteService.setTheme(7);
-        FXRouter.goTo("SubThemes", "7");
+        FXRouter.goTo("SubThemes");
     }
 
 }

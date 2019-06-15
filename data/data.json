@@ -1,6 +1,7 @@
 {
   "theme": {
     "1": {
+      "name": "Основные понятия",
       "sub_theme": {
         "1": {
           "id": "1",
@@ -14,6 +15,73 @@
           },
           "practice": {
             "1": {
+              "type": "r_task",
+              "text": "that 1.1.1 practic",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "text": "that 1.1.2 practic",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice 1.1.3",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
               "type": "pl_task",
               "questions": [
                 "System.out.println(x)",
@@ -28,6 +96,30 @@
                 "System.out.println(x)",
                 "}"
               ]
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "name": "subtheme 1.2",
+          "theory": {
+            "1": "that 1.2.1 theory",
+            "2": "that 1.2.2 theory",
+            "3": "that 1.2.3 theory",
+            "4": "that 1.2.4 theory",
+            "5": "that 1.2.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
             },
             "2": {
               "type": "cb_task",
@@ -88,27 +180,30 @@
             "5": {
               "type": "pl_task",
               "questions": [
-                "lol",
-                "kek",
-                "style",
-                "body"
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
               ],
               "text": "that 1.1.5 practic",
               "succes": [
-                "kek",
-                "lol",
-                "style"
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
               ]
             }
           }
         },
-        "2": {
-          "id": "2",
-          "name": "subtheme 1.2",
+        "3": {
+          "id": "3",
+          "name": "subtheme 1.3",
           "theory": {
             "1": "that 1.2.1 theory",
             "2": "that 1.2.2 theory",
-            "3": "that 1.2.3 theory"
+            "3": "that 1.2.3 theory",
+            "4": "that 1.2.4 theory",
+            "5": "that 1.2.5 theory"
           },
           "practice": {
             "1": {
@@ -138,41 +233,156 @@
             },
             "3": {
               "type": "dd_task",
+              "text": "Drag and drop practice",
               "questions": [
-                "lol",
+                "main",
                 "kek",
-                "cheburek",
+                "Hello world",
                 "style",
                 "body"
               ],
-              "text": "that 1.1.3 practic",
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
               "succes": [
-                "kek",
-                "lol",
-                "style"
+                "main",
+                "Hello world"
               ]
             },
             "4": {
               "type": "it_task",
               "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
               "succes": [
-                "kek",
-                "lol"
+                "main",
+                "Hello world"
               ]
             },
             "5": {
               "type": "pl_task",
               "questions": [
-                "lol",
-                "kek",
-                "style",
-                "body"
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
               ],
               "text": "that 1.1.5 practic",
               "succes": [
-                "kek",
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "name": "subtheme 1.4",
+          "theory": {
+            "1": "that 1.2.1 theory",
+            "2": "that 1.2.2 theory",
+            "3": "that 1.2.3 theory",
+            "4": "that 1.2.4 theory",
+            "5": "that 1.2.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
                 "lol",
+                "kek",
+                "cheburek",
                 "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
               ]
             }
           }
@@ -180,6 +390,7 @@
       }
     },
     "2": {
+      "name": "Условные операторы и циклы",
       "sub_theme": {
         "1": {
           "id": "1",
@@ -191,16 +402,62 @@
           },
           "practice": {
             "1": {
-              "type": "r_task",
-              "text": "that 2.1.1 practic"
+              "type": "dd_task",
+              "text": "Drag and drop practice 2.1.1",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
             },
             "2": {
-              "type": "cb_task",
-              "text": "that 2.1.2 practic"
+              "type": "it_task",
+              "text": "that 2.1.2 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
             },
             "3": {
-              "type": "dd_task",
-              "text": "that 2.1.3 practic"
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 2.1.3 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
             }
           }
         },
@@ -209,94 +466,1018 @@
           "name": "subtheme 2.2",
           "theory": {
             "1": "that 2.2.1 theory",
-            "2": "that 2.2.2 theory",
-            "3": "that 2.2.3 theory"
+            "2": "that 2.2.2 theory"
           },
           "practice": {
             "1": {
               "type": "r_task",
-              "text": "that 1.1.1 practic"
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 2.2.1 practic",
+              "succes": ["kek"]
             },
             "2": {
               "type": "cb_task",
-              "text": "that 1.1.2 practic"
-            },
-            "3": {
-              "type": "dd_task",
-              "text": "that 1.1.3 practic"
-            }
-          }
-        },
-        "3": {
-          "id": "3",
-          "name": "subtheme 2.3",
-          "theory": {
-            "1": "that 2.3.1 theory",
-            "2": "that 2.3.2 theory",
-            "3": "that 2.3.3 theory"
-          },
-          "practice": {
-            "1": {
-              "type": "r_task",
-              "text": "that 1.1.1 practic"
-            },
-            "2": {
-              "type": "cb_task",
-              "text": "that 1.1.2 practic"
-            },
-            "3": {
-              "type": "dd_task",
-              "text": "that 1.1.3 practic"
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 2.2.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
             }
           }
         }
       }
     },
     "3": {
+      "name": "Массивы",
       "sub_theme": {
         "1": {
           "id": "1",
-          "name": "subtheme 3.1",
+          "name": "subtheme 1.1",
           "theory": {
-            "1": "that 3.1.1 theory",
-            "2": "that 3.1.2 theory",
-            "3": "that 3.1.3 theory"
+            "1": "that 1.1.1 theory",
+            "2": "that 1.1.2 theory",
+            "3": "that 1.1.3 theory",
+            "4": "that 1.1.4 theory",
+            "5": "that 1.1.5 theory"
           },
           "practice": {
             "1": {
               "type": "r_task",
-              "text": "that 1.1.1 practic"
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
             },
             "2": {
               "type": "cb_task",
-              "text": "that 1.1.2 practic"
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
             },
             "3": {
               "type": "dd_task",
-              "text": "that 1.1.3 practic"
+              "text": "Drag and drop practice 1.1.3",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
             }
           }
         },
         "2": {
           "id": "2",
-          "name": "subtheme 3.2",
+          "name": "subtheme 1.2",
           "theory": {
-            "1": "that 3.2.1 theory",
-            "2": "that 3.2.2 theory",
-            "3": "that 3.2.3 theory"
+            "1": "that 1.2.1 theory",
+            "2": "that 1.2.2 theory",
+            "3": "that 1.2.3 theory",
+            "4": "that 1.2.4 theory",
+            "5": "that 1.2.5 theory"
           },
           "practice": {
             "1": {
               "type": "r_task",
-              "text": "that 3.2.1 practic"
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
             },
             "2": {
               "type": "cb_task",
-              "text": "that 3.2.2 practic"
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
             },
             "3": {
               "type": "dd_task",
-              "text": "that 3.2.3 practic"
+              "text": "Drag and drop practice",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "4": {
+      "name": "Классы и объекты",
+      "sub_theme": {
+        "1": {
+          "id": "1",
+          "name": "subtheme 1.1",
+          "theory": {
+            "1": "that 1.1.1 theory",
+            "2": "that 1.1.2 theory",
+            "3": "that 1.1.3 theory",
+            "4": "that 1.1.4 theory",
+            "5": "that 1.1.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice 1.1.3",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "name": "subtheme 1.2",
+          "theory": {
+            "1": "that 1.2.1 theory",
+            "2": "that 1.2.2 theory",
+            "3": "that 1.2.3 theory",
+            "4": "that 1.2.4 theory",
+            "5": "that 1.2.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "5": {
+      "name": "Работа со строками",
+      "sub_theme": {
+        "1": {
+          "id": "1",
+          "name": "subtheme 1.1",
+          "theory": {
+            "1": "that 1.1.1 theory",
+            "2": "that 1.1.2 theory",
+            "3": "that 1.1.3 theory",
+            "4": "that 1.1.4 theory",
+            "5": "that 1.1.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice 1.1.3",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "name": "subtheme 1.2",
+          "theory": {
+            "1": "that 1.2.1 theory",
+            "2": "that 1.2.2 theory",
+            "3": "that 1.2.3 theory",
+            "4": "that 1.2.4 theory",
+            "5": "that 1.2.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "6": {
+      "name": "Списки",
+      "sub_theme": {
+        "1": {
+          "id": "1",
+          "name": "subtheme 1.1",
+          "theory": {
+            "1": "that 1.1.1 theory",
+            "2": "that 1.1.2 theory",
+            "3": "that 1.1.3 theory",
+            "4": "that 1.1.4 theory",
+            "5": "that 1.1.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice 1.1.3",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "name": "subtheme 1.2",
+          "theory": {
+            "1": "that 1.2.1 theory",
+            "2": "that 1.2.2 theory",
+            "3": "that 1.2.3 theory",
+            "4": "that 1.2.4 theory",
+            "5": "that 1.2.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "7": {
+      "name": "Работа с файлами",
+      "sub_theme": {
+        "1": {
+          "id": "1",
+          "name": "subtheme 1.1",
+          "theory": {
+            "1": "that 1.1.1 theory",
+            "2": "that 1.1.2 theory",
+            "3": "that 1.1.3 theory",
+            "4": "that 1.1.4 theory",
+            "5": "that 1.1.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice 1.1.3",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "name": "subtheme 1.2",
+          "theory": {
+            "1": "that 1.2.1 theory",
+            "2": "that 1.2.2 theory",
+            "3": "that 1.2.3 theory",
+            "4": "that 1.2.4 theory",
+            "5": "that 1.2.5 theory"
+          },
+          "practice": {
+            "1": {
+              "type": "r_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.1 practic",
+              "succes": ["kek"]
+            },
+            "2": {
+              "type": "cb_task",
+              "questions": [
+                "lol",
+                "kek",
+                "cheburek",
+                "style"
+              ],
+              "text": "that 1.1.2 practic",
+              "succes": [
+                "kek",
+                "lol"
+              ]
+            },
+            "3": {
+              "type": "dd_task",
+              "text": "Drag and drop practice",
+              "questions": [
+                "main",
+                "kek",
+                "Hello world",
+                "style",
+                "body"
+              ],
+              "rows": [
+                [" "],
+                ["public static void ", " (String[] args) {"],
+                [" "],
+                ["    System.out.println(\"","\");"],
+                [" "],
+                ["}"]
+              ],
+              "paste": [
+                2,4
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "4": {
+              "type": "it_task",
+              "text": "that 1.1.4 practic",
+              "rows": [
+                ["public static void", "(String[] args) {"],
+                ["    System.out.println(",");"],
+                ["}"]
+              ],
+              "paste": [
+                1,2
+              ],
+              "succes": [
+                "main",
+                "Hello world"
+              ]
+            },
+            "5": {
+              "type": "pl_task",
+              "questions": [
+                "System.out.println(x)",
+                "public static void main(){",
+                "int x = 5;",
+                "}"
+              ],
+              "text": "that 1.1.5 practic",
+              "succes": [
+                "public static void main(){",
+                "int x = 5;",
+                "System.out.println(x)",
+                "}"
+              ]
             }
           }
         }

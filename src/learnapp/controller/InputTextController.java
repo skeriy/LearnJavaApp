@@ -8,6 +8,7 @@ import javafx.collections.ObservableListBase;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -20,6 +21,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class InputTextController {
+    @FXML
+    private AnchorPane practiceAnchorPane;
+
     @FXML
     private VBox codeVBox;
 
@@ -46,6 +50,25 @@ public class InputTextController {
             }
         }
         System.out.println("on check: " + result);
+
+        try {
+            if (result) {
+                System.out.println("OK");
+                if (RouteService.getTheory().equals(RouteService.getMaxTheory())) {
+                    System.out.println("SUBTHEME " + RouteService.getSubTheme() + " DONE! GO ALL SUBTHEMES!");
+                    FXRouter.goTo("SubThemes");
+                } else {
+                    RouteService.incPractice();
+                    RouteService.incTheory();
+                    FXRouter.goTo("theory");
+                }
+            } else {
+                System.out.println("NO");
+                FXRouter.goTo("theory");
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private ObservableList<TextField> allTextFields = FXCollections.observableArrayList();
@@ -75,5 +98,7 @@ public class InputTextController {
         }
 
         inputTextExText.setText(practiceObject.getText());
+
+        UtilService.showNavigatePanel(practiceAnchorPane);
     }
 }

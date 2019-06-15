@@ -3,10 +3,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.TheoryController">
+<AnchorPane fx:id="theoryAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.TheoryController">
    <children>
       <Text layoutX="378.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Theory" />
       <FlowPane fx:id="theoryFlowPane" layoutX="65.0" layoutY="70.0" prefHeight="433.0" prefWidth="669.0">
@@ -16,5 +16,6 @@
       </FlowPane>
       <Button fx:id="goToPracticeBtn" layoutX="672.0" layoutY="546.0" mnemonicParsing="false" onAction="#onGoToPractice" text="Go to practice" />
       <Button fx:id="backToSubThemesBtn" layoutY="1.0" mnemonicParsing="false" onAction="#onBackToSubThemes" text="Back to subthemes" />
+      <HBox fx:id="navigateHBox" layoutX="10.0" layoutY="550.0" prefHeight="26.0" />
    </children>
 </AnchorPane>

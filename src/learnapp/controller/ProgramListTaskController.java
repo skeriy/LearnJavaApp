@@ -18,6 +18,7 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import learnapp.pojo.Practice;
@@ -30,6 +31,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProgramListTaskController {
+    @FXML
+    private AnchorPane practiceAnchorPane;
+
     @FXML
     private VBox draggableVbox;
 
@@ -57,6 +61,25 @@ public class ProgramListTaskController {
             }
         }
         System.out.println("on check: " + result);
+
+        try {
+            if (result) {
+                System.out.println("OK");
+                if (RouteService.getTheory().equals(RouteService.getMaxTheory())) {
+                    System.out.println("SUBTHEME " + RouteService.getSubTheme() + " DONE! GO ALL SUBTHEMES!");
+                    FXRouter.goTo("SubThemes");
+                } else {
+                    RouteService.incPractice();
+                    RouteService.incTheory();
+                    FXRouter.goTo("theory");
+                }
+            } else {
+                System.out.println("NO");
+                FXRouter.goTo("theory");
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private ObservableList<String> answersObsList = FXCollections.observableArrayList();
@@ -79,6 +102,8 @@ public class ProgramListTaskController {
         listView.setPrefWidth(180);
 
         draggableVbox.getChildren().add(listView);
+
+        UtilService.showNavigatePanel(practiceAnchorPane);
     }
 
 

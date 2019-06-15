@@ -10,6 +10,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
+        stage.setResizable(false);
+
         FXRouter.bind(this, stage, "JavaLearn", 800, 600);
         FXRouter.setAnimationType("fade", 500);
 
@@ -21,7 +23,6 @@ public class Main extends Application {
         FXRouter.when("ProgramListTask", "view/programListTask.fxml");
         FXRouter.when("InputTextTask", "view/inputText.fxml");
         FXRouter.when("DragDropTask", "view/dragDropTask.fxml");
-        FXRouter.when("EX5", "view/ex5.fxml");
 
         DataService.setDataRootNode();
         ProgressService.init();

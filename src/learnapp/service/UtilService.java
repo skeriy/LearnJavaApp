@@ -1,12 +1,18 @@
 package learnapp.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.github.fxrouter.FXRouter;
+import javafx.event.EventHandler;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import learnapp.pojo.Practice;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Map;
 
 public class UtilService {
 
@@ -69,4 +75,29 @@ public class UtilService {
         return practiceObject;
     }
 
+    public static void showNavigatePanel(AnchorPane sceneRootLayout) {
+        HBox navigateHBox = new HBox();
+        for (int i = 1; i <= RouteService.getMaxTheory(); i++) {
+            int finalId = i;
+            Button theoryBtn = new Button("T" + i);
+            theoryBtn.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
+                try {
+                    RouteService.setTheory(finalId);
+                    RouteService.setPractice(finalId);
+                    FXRouter.goTo("theory");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+
+            if (i == RouteService.getTheory()){
+                theoryBtn.setStyle("-fx-background-color: #a2ed56");
+            }
+
+            navigateHBox.getChildren().add(theoryBtn);
+        }
+        navigateHBox.setLayoutX(10);
+        navigateHBox.setLayoutY(550);
+        sceneRootLayout.getChildren().add(navigateHBox);
+    }
 }

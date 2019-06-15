@@ -15,23 +15,19 @@ public class RouteService {
     private static Integer maxTheory;
     private static Integer maxPractice;
 
-    public static void switchState() {
-        currentState = currentState.equals("theory") ? "practice" : "theory";
-    }
-
-    public static void incPractice() {
+    public static void incTheme() {
         theme++;
     }
 
-    public static void incTheme() {
+    public static void incSubTheme() {
         subTheme++;
     }
 
-    public static void incSubTheme() {
+    public static void incTheory() {
         theory++;
     }
 
-    public static void incTheory() {
+    public static void incPractice() {
         practice++;
     }
 

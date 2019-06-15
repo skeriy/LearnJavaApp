@@ -4,13 +4,17 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fxrouter.FXRouter;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import learnapp.service.DataService;
 import learnapp.service.ProgressService;
 import learnapp.service.RouteService;
+import learnapp.service.UtilService;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -23,6 +27,9 @@ import java.util.Map;
 public class TheoryController {
 
     @FXML
+    private AnchorPane theoryAnchorPane;
+
+    @FXML
     private Button backToSubThemesBtn;
 
     @FXML
@@ -33,6 +40,9 @@ public class TheoryController {
 
     @FXML
     private Text theoryText;
+
+    @FXML
+    private HBox navigateHBox;
 
     @FXML
     public void onBackToSubThemes() throws IOException{
@@ -64,8 +74,6 @@ public class TheoryController {
                     break;
             }
 
-            RouteService.incTheory();
-
             System.out.println();
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -83,7 +91,8 @@ public class TheoryController {
         JsonNode theoryNode = subThemeNode.path("theory");
         theoryText.setText(theoryNode.get(RouteService.getTheory().toString()).asText());
 
-        System.out.println();
+        UtilService.showNavigatePanel(theoryAnchorPane);
 
+        System.out.println();
     }
 }

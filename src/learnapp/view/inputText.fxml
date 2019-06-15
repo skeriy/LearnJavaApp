@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.InputTextController">
+<AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.InputTextController">
    <children>
       <Button fx:id="backToMenuBtn" mnemonicParsing="false" onAction="#onBackToMenu" text="backToMenu" />
       <Button fx:id="checkBtn" layoutX="737.0" layoutY="560.0" mnemonicParsing="false" onAction="#onCheck" text="Check" />

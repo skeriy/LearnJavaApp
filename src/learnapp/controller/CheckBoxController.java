@@ -5,6 +5,7 @@ import com.github.fxrouter.FXRouter;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import learnapp.pojo.Practice;
@@ -16,6 +17,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CheckBoxController {
+    @FXML
+    private AnchorPane practiceAnchorPane;
+
     @FXML
     private Button backToMenuBtn;
 
@@ -64,6 +68,8 @@ public class CheckBoxController {
         check4.setText(practiceObject.getQuestions().get(3));
 
         checkBoxExText.setText(practiceObject.getText());
+
+        UtilService.showNavigatePanel(practiceAnchorPane);
     }
 
     private void checkCheckBoxes(){
@@ -85,10 +91,10 @@ public class CheckBoxController {
         boolean result = true;
         for (String answer : checkBoxAnswers) {
             if (practiceObject.getSucces().contains(answer)) {
-                System.out.println("OK");
+                System.out.println("CHECK_OK");
                 continue;
             } else {
-                System.out.println("NO");
+                System.out.println("CHECK_NO");
                 result = false;
                 break;
             }
@@ -97,11 +103,25 @@ public class CheckBoxController {
             result = false;
         }
 
-        if (result) {
-            System.out.println("GOOOOD");
-        } else {
-            System.out.println("NOT GOOOOD");
+        try {
+            if (result) {
+                System.out.println("OK");
+                if (RouteService.getTheory().equals(RouteService.getMaxTheory())) {
+                    System.out.println("SUBTHEME " + RouteService.getSubTheme() + " DONE! GO ALL SUBTHEMES!");
+                    FXRouter.goTo("SubThemes");
+                } else {
+                    RouteService.incPractice();
+                    RouteService.incTheory();
+                    FXRouter.goTo("theory");
+                }
+            } else {
+                System.out.println("NO");
+                FXRouter.goTo("theory");
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
+
     }
 
     private String checkBoxAnswersToString(){

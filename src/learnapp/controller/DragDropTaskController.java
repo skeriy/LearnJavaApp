@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -26,6 +27,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DragDropTaskController {
+    @FXML
+    private AnchorPane practiceAnchorPane;
+
     @FXML
     private VBox codeVBox;
 
@@ -56,6 +60,25 @@ public class DragDropTaskController {
             }
         }
         System.out.println("on check: " + result);
+
+        try {
+            if (result) {
+                System.out.println("OK");
+                if (RouteService.getTheory().equals(RouteService.getMaxTheory())) {
+                    System.out.println("SUBTHEME " + RouteService.getSubTheme() + " DONE! GO ALL SUBTHEMES!");
+                    FXRouter.goTo("SubThemes");
+                } else {
+                    RouteService.incPractice();
+                    RouteService.incTheory();
+                    FXRouter.goTo("theory");
+                }
+            } else {
+                System.out.println("NO");
+                FXRouter.goTo("theory");
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private Button answerBtn1;
@@ -103,34 +126,7 @@ public class DragDropTaskController {
 
         dragDropExText.setText(practiceObject.getText());
 
-
-       /* HBox row = new HBox();
-        fieldHBox = new HBox();
-        fieldHBox.setPrefWidth(100);
-        fieldHBox.setStyle("-fx-background-color: #c1fcff");
-        row.getChildren().addAll(new Text("Pre text "), fieldHBox, new Text(" post text."));
-        codeVBox.getChildren().add(row);
-
-        answerBtn1 = new Button();
-        answerBtn1.setText("answer1");
-        answerBtn1.setStyle("-fx-background-color: #fffc16");
-
-        answerBtn2 = new Button();
-        answerBtn2.setText("answer2");
-        answerBtn2.setStyle("-fx-background-color: #01dcff");
-        answersHBox.getChildren().addAll(answerBtn1, answerBtn2);
-
-        // Add listeners for answers
-        answerBtn1.setOnDragDetected(this::dragDetected);
-        answerBtn1.setOnDragDone(this::dragDone);
-        answerBtn2.setOnDragDetected(this::dragDetected);
-        answerBtn2.setOnDragDone(this::dragDone);
-
-
-
-        // Add mouse event handlers for the target
-        fieldHBox.setOnDragOver(this::dragOver);
-        fieldHBox.setOnDragDropped(this::dragDropped);*/
+        UtilService.showNavigatePanel(practiceAnchorPane);
 
     }
 

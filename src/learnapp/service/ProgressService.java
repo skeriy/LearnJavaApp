@@ -31,8 +31,15 @@ public class ProgressService {
 
     }
 
-    public static void switchState() {
-        currentState = currentState.equals("theory") ? "practice" : "theory";
+    public static void setProgressToDefault() {
+        setTheme(1);
+        setSubTheme(1);
+        setTheory(1);
+        setPractice(1);
+    }
+
+    public static void saveProgressToFile() {
+
     }
 
     public static void incPractice() {
