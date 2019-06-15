@@ -5,12 +5,14 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import learnapp.service.DataService;
 import learnapp.service.ProgressService;
+import learnapp.service.RouteService;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
         stage.setResizable(false);
+        stage.setOnCloseRequest(event -> ProgressService.saveProgressToFile());
 
         FXRouter.bind(this, stage, "JavaLearn", 800, 600);
         FXRouter.setAnimationType("fade", 500);

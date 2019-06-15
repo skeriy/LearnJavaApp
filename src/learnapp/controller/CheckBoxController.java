@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import learnapp.pojo.Practice;
 import learnapp.service.DataService;
+import learnapp.service.ProgressService;
 import learnapp.service.RouteService;
 import learnapp.service.UtilService;
 
@@ -103,24 +104,7 @@ public class CheckBoxController {
             result = false;
         }
 
-        try {
-            if (result) {
-                System.out.println("OK");
-                if (RouteService.getTheory().equals(RouteService.getMaxTheory())) {
-                    System.out.println("SUBTHEME " + RouteService.getSubTheme() + " DONE! GO ALL SUBTHEMES!");
-                    FXRouter.goTo("SubThemes");
-                } else {
-                    RouteService.incPractice();
-                    RouteService.incTheory();
-                    FXRouter.goTo("theory");
-                }
-            } else {
-                System.out.println("NO");
-                FXRouter.goTo("theory");
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        ProgressService.updateProgress(result);
 
     }
 

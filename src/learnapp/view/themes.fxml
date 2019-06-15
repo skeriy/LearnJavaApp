@@ -14,7 +14,7 @@
             <Font size="32.0" />
          </font>
       </Text>
-      <VBox layoutX="275.0" layoutY="188.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="250.0">
+      <VBox fx:id="themesVBox" layoutX="275.0" layoutY="188.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="250.0">
          <children>
             <Button fx:id="Theme1Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme1" prefHeight="26.0" prefWidth="325.0" text="1. Основные понятия">
                <VBox.margin>
@@ -53,6 +53,6 @@
             </Button>
          </children>
       </VBox>
-      <Button fx:id="progressToDefaultBtn" layoutX="679.0" layoutY="1.0" mnemonicParsing="false" onAction="#setProgressToDefault" text="Очистить прогресс" />
+      <Button fx:id="progressToDefaultBtn" layoutX="665.0" layoutY="14.0" mnemonicParsing="false" onAction="#setProgressToDefault" text="Очистить прогресс" />
    </children>
 </AnchorPane>

@@ -89,6 +89,8 @@ public class TheoryController {
         JsonNode subThemeNode = rootNode.path("theme").path(RouteService.getTheme().toString()).path("sub_theme").path(RouteService.getSubTheme().toString());
 
         JsonNode theoryNode = subThemeNode.path("theory");
+        String s = RouteService.getTheory().toString();
+        JsonNode n = theoryNode.get(s);
         theoryText.setText(theoryNode.get(RouteService.getTheory().toString()).asText());
 
         UtilService.showNavigatePanel(theoryAnchorPane);

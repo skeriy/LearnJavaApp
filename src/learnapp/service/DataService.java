@@ -14,6 +14,7 @@ public class DataService {
     public final static String DRAG_DROP_TASK = "dd_task";
     public final static String INPUT_TEXT_TASK = "it_task";
     public static JsonNode dataRootNode;
+    public static JsonNode progressData;
 
     public static JsonNode getDataRootNode() {
         return dataRootNode;
@@ -27,5 +28,13 @@ public class DataService {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static JsonNode getProgressData() {
+        return progressData;
+    }
+
+    public static void setProgressData(JsonNode progressData) {
+        DataService.progressData = progressData;
     }
 }

@@ -8,6 +8,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import learnapp.service.DataService;
+import learnapp.service.ProgressService;
 import learnapp.service.RouteService;
 
 import java.io.IOException;
@@ -50,26 +51,35 @@ public class SubThemesController {
         Map<String, String> subThemesNames = new HashMap<>();
         Iterator<JsonNode> subThemesIt = subThemeNode.elements();
 
+        int lastSubTheme = 0;
         while (subThemesIt.hasNext()) {
             JsonNode subTheme = subThemesIt.next();
             subThemesNames.put(subTheme.get("id").asText(), subTheme.get("name").asText());
+            lastSubTheme++;
         }
+        ProgressService.setLastSuccessSubTheme(lastSubTheme);
 
         ArrayList<Button> subThemesButtons = new ArrayList<>();
         for (Map.Entry<String, String> entry : subThemesNames.entrySet()) {
+            String subThemeId = entry.getKey();
+
             Button button = new Button(entry.getValue());
             button.setPrefWidth(subThemesVBox.getPrefWidth());
 
+            if (ProgressService.getTheme() == RouteService.getTheme() && Integer.valueOf(subThemeId) > ProgressService.getSubTheme()){
+                button.setDisable(true);
+            }
+
             button.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 try {
-                    String subThemeId = entry.getKey();
+
                     RouteService.setSubTheme(Integer.valueOf(subThemeId));
-                    calculateSubThemesTheoryAndPractice(subThemeId);
+                    calculateSubThemesMaxTheoryAndPractice(subThemeId);
 
                     RouteService.setTheory(RouteService.getMinTheory());
                     RouteService.setPractice(RouteService.getMinPractice());
 
-                    FXRouter.goTo("theory", entry.getKey());
+                    FXRouter.goTo("theory", subThemeId);
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -83,12 +93,13 @@ public class SubThemesController {
 
     }
 
-    private void calculateSubThemesTheoryAndPractice(String subThemeId) {
+    private void calculateSubThemesMaxTheoryAndPractice(String subThemeId) {
         int maxTheory = 0;
         int maxPractice = 0;
 
-        Iterator<JsonNode> theory = DataService.getDataRootNode().path("theme").path(RouteService.getTheme()).path("sub_theme").path(subThemeId).path("theory").elements();
-        Iterator<JsonNode> practice = DataService.getDataRootNode().path("theme").path(RouteService.getTheme()).path("sub_theme").path(subThemeId).path("practice").elements();
+
+        Iterator<JsonNode> theory = DataService.getDataRootNode().path("theme").path(RouteService.getTheme().toString()).path("sub_theme").path(subThemeId).path("theory").elements();
+        Iterator<JsonNode> practice = DataService.getDataRootNode().path("theme").path(RouteService.getTheme().toString()).path("sub_theme").path(subThemeId).path("practice").elements();
 
         while (theory.hasNext()) {
             theory.next();

@@ -15,6 +15,13 @@ public class RouteService {
     private static Integer maxTheory;
     private static Integer maxPractice;
 
+    public static void init() {
+        setTheme(ProgressService.getTheme());
+        setSubTheme(ProgressService.getSubTheme());
+        setTheory(ProgressService.getTheory());
+        setPractice(ProgressService.getPractice());
+    }
+
     public static void incTheme() {
         theme++;
     }
