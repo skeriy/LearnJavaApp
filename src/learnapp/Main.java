@@ -11,12 +11,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
+        DataService.setMainStage(stage);
         stage.setResizable(false);
         stage.setOnCloseRequest(event -> ProgressService.saveProgressToFile());
 
-        FXRouter.bind(this, stage, "JavaLearn", 800, 600);
+        FXRouter.bind(this, stage, "JavaLearn", 400, 200);
         FXRouter.setAnimationType("fade", 500);
 
+        FXRouter.when("Login", "view/login.fxml");
         FXRouter.when("Themes", "view/themes.fxml");
         FXRouter.when("SubThemes", "view/subThemes.fxml");
         FXRouter.when("theory", "view/theory.fxml");
@@ -26,10 +28,9 @@ public class Main extends Application {
         FXRouter.when("InputTextTask", "view/inputText.fxml");
         FXRouter.when("DragDropTask", "view/dragDropTask.fxml");
 
+        ProgressService.initRootProgress();
         DataService.setDataRootNode();
-        ProgressService.init();
-
-        FXRouter.goTo("Themes");
+        FXRouter.goTo("Login");
     }
 
 

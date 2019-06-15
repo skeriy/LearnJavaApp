@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,12 +12,24 @@
    <children>
       <Button fx:id="backToMenuBtn" layoutY="1.0" mnemonicParsing="false" onAction="#onBackToMenu" text="backToMenu" />
       <Button fx:id="checkBtn" layoutX="705.0" layoutY="540.0" mnemonicParsing="false" onAction="#onCheck" text="Check" />
-      <VBox fx:id="checkBtnBox" layoutX="93.0" layoutY="366.0" prefHeight="92.0" prefWidth="544.0">
+      <VBox fx:id="checkBtnBox" layoutX="93.0" layoutY="366.0" prefHeight="124.0" prefWidth="544.0">
          <children>
-            <CheckBox fx:id="check1" mnemonicParsing="false" text="Check1" />
-            <CheckBox fx:id="check2" mnemonicParsing="false" text="Check2" />
-            <CheckBox fx:id="check3" mnemonicParsing="false" text="Check3" />
-            <CheckBox fx:id="check4" mnemonicParsing="false" text="Check4" />
+            <CheckBox fx:id="check1" mnemonicParsing="false" text="Check1">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></CheckBox>
+            <CheckBox fx:id="check2" mnemonicParsing="false" text="Check2">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></CheckBox>
+            <CheckBox fx:id="check3" mnemonicParsing="false" text="Check3">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></CheckBox>
+            <CheckBox fx:id="check4" mnemonicParsing="false" text="Check4">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></CheckBox>
          </children>
       </VBox>
       <FlowPane layoutX="93.0" layoutY="77.0" prefHeight="240.0" prefWidth="604.0">

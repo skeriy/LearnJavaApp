@@ -9,7 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/FXRouter.jar!/" />
@@ -18,8 +18,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="jackson-core-2.9.9" level="project" />
-    <orderEntry type="library" name="jackson-annotations-2.9.9" level="project" />
-    <orderEntry type="library" name="jackson-databind-2.9.9" level="project" />
+    <orderEntry type="library" exported="" name="jackson-core-2.9.9" level="project" />
+    <orderEntry type="library" exported="" name="jackson-annotations-2.9.9" level="project" />
+    <orderEntry type="library" exported="" name="jackson-databind-2.9.9" level="project" />
   </component>
 </module>

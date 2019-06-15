@@ -21,21 +21,25 @@ public class ProgressService {
     private static String currentState;
 
     public static void init() {
+        JsonNode rootNode = DataService.getRootProgress();
+        DataService.setProgressData(rootNode.path(LoginService.getLogin()));
+
+        JsonNode userNode = DataService.getProgressData();
+        setTheme(userNode.get("theme").asInt());
+        setSubTheme(userNode.get("sub_theme").asInt());
+        setTheory(userNode.get("theory").asInt());
+        setPractice(userNode.get("practice").asInt());
+    }
+
+    public static void initRootProgress() {
         try {
             byte[] jsonData = Files.readAllBytes(Paths.get("data/progress.json"));
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode rootNode = objectMapper.readTree(jsonData);
-            DataService.setProgressData(rootNode);
-
-            setTheme(rootNode.get("theme").asInt());
-            setSubTheme(rootNode.get("sub_theme").asInt());
-            setTheory(rootNode.get("theory").asInt());
-            setPractice(rootNode.get("practice").asInt());
-            setCurrentState(rootNode.get("current").asText());
-        } catch (IOException ex) {
-            ex.printStackTrace();
+            DataService.setRootProgress(rootNode);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
     }
 
     public static void setProgressToDefault() {
@@ -84,23 +88,25 @@ public class ProgressService {
     }
 
     public static void saveProgressToFile() {
-        JsonNode savedProgress = DataService.getProgressData();
-        ((ObjectNode) savedProgress).put("theme", ProgressService.getTheme());
-        ((ObjectNode) savedProgress).put("sub_theme", ProgressService.getSubTheme());
-        ((ObjectNode) savedProgress).put("theory", ProgressService.getTheory());
-        ((ObjectNode) savedProgress).put("practice", ProgressService.getPractice());
+        if (!LoginService.getLogin().isEmpty() && !LoginService.getState().equals("register")) {
+            JsonNode savedProgress = DataService.getRootProgress().path(LoginService.getLogin());
+            ((ObjectNode) savedProgress).put("theme", ProgressService.getTheme());
+            ((ObjectNode) savedProgress).put("sub_theme", ProgressService.getSubTheme());
+            ((ObjectNode) savedProgress).put("theory", ProgressService.getTheory());
+            ((ObjectNode) savedProgress).put("practice", ProgressService.getPractice());
 
-        ObjectMapper mapper = new ObjectMapper();
-        String s = "";
-        try {
-             s = mapper.writeValueAsString(savedProgress);
-            FileWriter writer = new FileWriter("data/progress.json", false);
-            writer.write(s);
-            writer.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+            ObjectMapper mapper = new ObjectMapper();
+            String s = "";
+            try {
+                s = mapper.writeValueAsString(DataService.getRootProgress());
+                FileWriter writer = new FileWriter("data/progress.json", false);
+                writer.write(s);
+                writer.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            System.out.println(s);
         }
-        System.out.println(s);
     }
 
     public static void incTheme() {
