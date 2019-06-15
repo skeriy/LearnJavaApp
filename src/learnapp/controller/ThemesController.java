@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import learnapp.service.ProgressService;
 import learnapp.service.RouteService;
 
 import java.io.IOException;
@@ -47,8 +48,8 @@ public class ThemesController {
     }
 
     @FXML
-    public void onProgressToDefault() {
-
+    public void setProgressToDefault() {
+        ProgressService.setProgressToDefault();
     }
 
     @FXML
