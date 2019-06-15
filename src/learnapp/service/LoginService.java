@@ -14,10 +14,10 @@ public class LoginService {
     public static List<String> getSavedUsers() {
         List<String> users = new ArrayList<>();
         JsonNode allUsers = DataService.getRootProgress();
-        Iterator<JsonNode> allUsersIt = allUsers.elements();
+        Iterator<String> allUsersIt = allUsers.fieldNames();
 
         while (allUsersIt.hasNext()) {
-            users.add(allUsersIt.next().asText());
+            users.add(allUsersIt.next());
         }
         return users;
     }
