@@ -5,6 +5,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.fxrouter.FXRouter;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.control.Alert;
+import javafx.stage.Screen;
 
 import javax.xml.crypto.Data;
 import java.io.FileWriter;
@@ -79,8 +82,17 @@ public class ProgressService {
                     FXRouter.goTo("theory");
                 }
             } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Неправильный ответ");
+                alert.setHeaderText(null);
+                alert.setContentText("Задание решено неправильно. Поробуйте еще раз.");
+
+                /*alert.setX(((DataService.getMainStage().getX() + (800 - alert.getWidth()) / 2)));
+                alert.setY(((DataService.getMainStage().getY() + (600 - alert.getHeight()) / 2)));*/
+
+                alert.showAndWait();
                 System.out.println("NO");
-                FXRouter.goTo("theory");
+//                FXRouter.goTo("theory");
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -88,7 +100,7 @@ public class ProgressService {
     }
 
     public static void saveProgressToFile() {
-        if (!LoginService.getLogin().isEmpty() && !LoginService.getState().equals("register")) {
+        if (!LoginService.getLogin().isEmpty() && LoginService.getState().equals("RunProgram")) {
             JsonNode savedProgress = DataService.getRootProgress().path(LoginService.getLogin());
             ((ObjectNode) savedProgress).put("theme", ProgressService.getTheme());
             ((ObjectNode) savedProgress).put("sub_theme", ProgressService.getSubTheme());
@@ -107,6 +119,11 @@ public class ProgressService {
             }
             System.out.println(s);
         }
+    }
+
+    public static void deleteUser(String name) {
+        JsonNode usersProgress = DataService.getRootProgress();
+        ((ObjectNode) usersProgress).remove(name);
     }
 
     public static void incTheme() {
@@ -172,4 +189,6 @@ public class ProgressService {
     public static void setLastSuccessSubTheme(int lastSuccessSubTheme) {
         ProgressService.lastSuccessSubTheme = lastSuccessSubTheme;
     }
+
+
 }

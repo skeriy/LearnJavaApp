@@ -19,6 +19,7 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import learnapp.pojo.Practice;
@@ -34,6 +35,9 @@ import java.util.List;
 public class ProgramListTaskController {
     @FXML
     private AnchorPane practiceAnchorPane;
+
+    @FXML
+    private HBox navigateHBox;
 
     @FXML
     private VBox draggableVbox;
@@ -54,16 +58,7 @@ public class ProgramListTaskController {
 
     @FXML
     public void onCheck() {
-        boolean result = true;
-        for (int i = 0; i < answersObsList.size(); i++) {
-            String answer = answersObsList.get(i);
-            if (!answer.equals(practiceObject.getSucces().get(i))) {
-                result = false;
-            }
-        }
-        System.out.println("on check: " + result);
-
-        ProgressService.updateProgress(result);
+        checkListAnswer();
     }
 
     private ObservableList<String> answersObsList = FXCollections.observableArrayList();
@@ -87,7 +82,7 @@ public class ProgramListTaskController {
 
         draggableVbox.getChildren().add(listView);
 
-        UtilService.showNavigatePanel(practiceAnchorPane);
+        UtilService.showNavigatePanel(navigateHBox);
     }
 
 
@@ -198,6 +193,19 @@ public class ProgramListTaskController {
             scene.snapshot(img);
             return img ;
         }
+    }
+
+    private void checkListAnswer() {
+        boolean result = true;
+        for (int i = 0; i < answersObsList.size(); i++) {
+            String answer = answersObsList.get(i);
+            if (!answer.equals(practiceObject.getSucces().get(i))) {
+                result = false;
+            }
+        }
+        System.out.println("on check: " + result);
+
+        ProgressService.updateProgress(result);
     }
 }
 

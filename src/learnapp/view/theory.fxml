@@ -5,17 +5,18 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="theoryAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.TheoryController">
    <children>
-      <Text layoutX="378.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Theory" />
-      <FlowPane fx:id="theoryFlowPane" layoutX="65.0" layoutY="70.0" prefHeight="433.0" prefWidth="669.0">
+      <Text fx:id="theoryNameText" layoutX="66.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Теория" />
+      <FlowPane fx:id="theoryFlowPane" layoutX="66.0" layoutY="129.0" prefHeight="326.0" prefWidth="669.0">
          <children>
-            <Text fx:id="theoryText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <TextFlow fx:id="theoryText" prefHeight="21.0" prefWidth="670.0" />
          </children>
       </FlowPane>
-      <Button fx:id="goToPracticeBtn" layoutX="672.0" layoutY="546.0" mnemonicParsing="false" onAction="#onGoToPractice" text="Go to practice" />
-      <Button fx:id="backToSubThemesBtn" layoutY="1.0" mnemonicParsing="false" onAction="#onBackToSubThemes" text="Back to subthemes" />
-      <HBox fx:id="navigateHBox" layoutX="10.0" layoutY="550.0" prefHeight="26.0" />
+      <Button fx:id="goToPracticeBtn" layoutX="667.0" layoutY="538.0" mnemonicParsing="false" onAction="#onGoToPractice" text="Дальше" />
+      <Button fx:id="backToSubThemesBtn" layoutX="32.0" layoutY="538.0" mnemonicParsing="false" onAction="#onBackToSubThemes" text="Вернуться к темам" />
+      <HBox fx:id="navigateHBox" alignment="TOP_CENTER" layoutY="1.0" prefHeight="40.0" prefWidth="800.0" />
    </children>
 </AnchorPane>

@@ -11,7 +11,6 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.LoginController">
    <children>
       <TextField fx:id="loginTextField" layoutX="75.0" layoutY="93.0" prefWidth="250.0" />
-      <Button fx:id="loginBtn" layoutX="174.0" layoutY="143.0" mnemonicParsing="false" onAction="#onLoginBtn" text="Button" />
       <HBox alignment="TOP_CENTER" layoutY="20.0" prefHeight="23.0" prefWidth="400.0">
          <children>
             <Text fx:id="loginTitleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textOrigin="CENTER">
@@ -23,12 +22,17 @@
       </HBox>
       <HBox alignment="TOP_CENTER" layoutY="70.0" prefHeight="23.0" prefWidth="400.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Введите логин" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Введите имя пользователя" />
          </children>
       </HBox>
       <HBox alignment="TOP_CENTER" layoutY="117.0" prefHeight="23.0" prefWidth="400.0">
          <children>
             <Hyperlink fx:id="loginLink" onAction="#onLoginLink" text="Создать логин" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="136.0" prefHeight="43.0" prefWidth="400.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="136.0">
+         <children>
+            <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLoginBtn" text="Button" />
          </children>
       </HBox>
    </children>

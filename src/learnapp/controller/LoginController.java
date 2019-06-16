@@ -2,11 +2,14 @@ package learnapp.controller;
 
 import com.github.fxrouter.FXRouter;
 import javafx.fxml.FXML;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 import learnapp.service.DataService;
 import learnapp.service.LoginService;
 
@@ -31,7 +34,7 @@ public class LoginController {
     public void onLoginBtn() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         if (loginTextField.getText().isEmpty()) {
-            alert.setTitle("Ошибка логина");
+            alert.setTitle("Ошибка авторизации");
             alert.setHeaderText(null);
             alert.setContentText("Введите логин");
             alert.showAndWait();
@@ -42,18 +45,28 @@ public class LoginController {
 
             if (LoginService.getState().equals("login")) {
                 if (login.toLowerCase().equals("admin")){
+                    login = login.toLowerCase();
+                    LoginService.setLogin(login.toLowerCase());
                     LoginService.setAdminMode(true);
                 }
-                try {
-                    FXRouter.goTo("Themes");
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if (LoginService.isUserExist(login)) {
+                    try {
+                        setWindowToCenter();
+                        FXRouter.goTo("Themes");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    alert.setTitle("Ошибка авторизации");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Пользователя '" + login + "' не существует. Вы можете его создать нажав на \"Создать нового пользователя\"");
+                    alert.showAndWait();
                 }
             } else {
-                if (login.toLowerCase().equals("admin") || LoginService.getSavedUsers().contains(login)) {
+                if (login.toLowerCase().equals("admin") || LoginService.isUserExist(login)) {
                     alert.setTitle("Ошибка создания учетной записи");
                     alert.setHeaderText(null);
-                    alert.setContentText("Имя существует");
+                    alert.setContentText("Пользователь с таким именем уже существует");
                     alert.showAndWait();
                     System.out.println("Name exist");
                     loginTextField.setText("");
@@ -61,6 +74,7 @@ public class LoginController {
                     LoginService.addNewUser();
                     LoginService.setState("login");
                     try {
+                        setWindowToCenter();
                         FXRouter.goTo("Themes");
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -77,10 +91,10 @@ public class LoginController {
         try {
             if (LoginService.getState().equals("login")) {
                 LoginService.setState("register");
-                FXRouter.goTo("Login");
+                FXRouter.goTo("LoginOrRegister");
             } else {
                 LoginService.setState("login");
-                FXRouter.goTo("Login");
+                FXRouter.goTo("LoginOrRegister");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -91,12 +105,19 @@ public class LoginController {
     public void initialize() {
         if (LoginService.getState().equals("login")) {
             loginTitleText.setText("Авторизация");
-            loginLink.setText("Создать логин");
+            loginLink.setText("Создать нового пользователя");
             loginBtn.setText("Войти");
         } else {
-            loginTitleText.setText("Создание учетной записи");
-            loginLink.setText("Войти в приложение");
+            loginTitleText.setText("Создание нового пользователя");
+            loginLink.setText("Войти");
             loginBtn.setText("Создать");
         }
+    }
+
+    private void setWindowToCenter() {
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        Stage stage = DataService.getMainStage();
+        stage.setX((screenBounds.getWidth() - 800) / 2);
+        stage.setY((screenBounds.getHeight() - 600) / 2);
     }
 }

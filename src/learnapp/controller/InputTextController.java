@@ -26,6 +26,9 @@ public class InputTextController {
     private AnchorPane practiceAnchorPane;
 
     @FXML
+    private HBox navigateHBox;
+
+    @FXML
     private VBox codeVBox;
 
     @FXML
@@ -39,20 +42,12 @@ public class InputTextController {
 
     @FXML
     public void onBackToMenu() throws IOException {
-        FXRouter.goTo("Menu");
+        FXRouter.goTo("Themes");
     }
 
     @FXML
     public void onCheck() {
-        boolean result = true;
-        for (int i = 0; i < allTextFields.size(); i++) {
-            if (!allTextFields.get(i).getText().equals(practiceObject.getSucces().get(i))) {
-                result = false;
-            }
-        }
-        System.out.println("on check: " + result);
-
-        ProgressService.updateProgress(result);
+        checkInputs();
     }
 
     private ObservableList<TextField> allTextFields = FXCollections.observableArrayList();
@@ -83,6 +78,18 @@ public class InputTextController {
 
         inputTextExText.setText(practiceObject.getText());
 
-        UtilService.showNavigatePanel(practiceAnchorPane);
+        UtilService.showNavigatePanel(navigateHBox);
+    }
+
+    private void checkInputs() {
+        boolean result = true;
+        for (int i = 0; i < allTextFields.size(); i++) {
+            if (!allTextFields.get(i).getText().equals(practiceObject.getSucces().get(i))) {
+                result = false;
+            }
+        }
+        System.out.println("on check: " + result);
+
+        ProgressService.updateProgress(result);
     }
 }

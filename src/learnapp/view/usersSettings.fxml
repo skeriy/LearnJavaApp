@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.UsersSettingsController">
+   <children>
+      <Text layoutX="50.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пользователи">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Button fx:id="backToMenuBtn" layoutY="2.0" mnemonicParsing="false" onAction="#onBackToMenu" text="На главный экран" />
+      <TableView fx:id="usersTable" layoutX="50.0" layoutY="145.0" prefHeight="380.0" prefWidth="700.0">
+        <columns>
+          <TableColumn fx:id="userNameColumn" editable="false" prefWidth="379.0" text="Имя пользователя" />
+            <TableColumn fx:id="themeColumn" editable="false" prefWidth="52.0" style="-fx-alignment: CENTER;" text="Тема" />
+            <TableColumn fx:id="subThemeColumn" editable="false" prefWidth="71.0" style="-fx-alignment: CENTER;" text="Подтема" />
+            <TableColumn fx:id="theoryColumn" editable="false" prefWidth="58.0" style="-fx-alignment: CENTER;" text="Теория" />
+            <TableColumn fx:id="practiceColumn" editable="false" minWidth="0.0" prefWidth="73.0" style="-fx-alignment: CENTER;" text="Практика" />
+          <TableColumn fx:id="buttonColumn" editable="false" prefWidth="66.0" text="Действие" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -7,8 +7,10 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import learnapp.service.DataService;
+import learnapp.service.LoginService;
 import learnapp.service.ProgressService;
 import learnapp.service.RouteService;
 
@@ -24,6 +26,12 @@ public class ThemesController {
 
     @FXML
     private VBox themesVBox;
+
+    @FXML
+    private Text loginNameText;
+
+    @FXML
+    private Button userSettingsBtn;
 
     @FXML
     private Button Theme1Btn;
@@ -43,6 +51,11 @@ public class ThemesController {
     @FXML
     public void setProgressToDefault() {
         ProgressService.setProgressToDefault();
+    }
+
+    @FXML
+    public void onUserSettings() throws IOException{
+        FXRouter.goTo("UserSettings");
     }
 
     @FXML
@@ -82,6 +95,13 @@ public class ThemesController {
     }
 
     public void initialize() {
+        LoginService.setState("RunProgram");
+        loginNameText.setText(LoginService.getLogin());
+
+        if (LoginService.isAdminMode()) {
+            userSettingsBtn.setVisible(true);
+        }
+
         Stage stage = DataService.getMainStage();
         stage.setWidth(800);
         stage.setHeight(600);

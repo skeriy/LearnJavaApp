@@ -18,7 +18,8 @@ public class Main extends Application {
         FXRouter.bind(this, stage, "JavaLearn", 400, 200);
         FXRouter.setAnimationType("fade", 500);
 
-        FXRouter.when("Login", "view/login.fxml");
+        FXRouter.when("LoginOrRegister", "view/login.fxml");
+        FXRouter.when("UserSettings", "view/usersSettings.fxml");
         FXRouter.when("Themes", "view/themes.fxml");
         FXRouter.when("SubThemes", "view/subThemes.fxml");
         FXRouter.when("theory", "view/theory.fxml");
@@ -30,7 +31,7 @@ public class Main extends Application {
 
         ProgressService.initRootProgress();
         DataService.setDataRootNode();
-        FXRouter.goTo("Login");
+        FXRouter.goTo("LoginOrRegister");
     }
 
 

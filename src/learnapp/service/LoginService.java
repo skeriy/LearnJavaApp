@@ -22,6 +22,10 @@ public class LoginService {
         return users;
     }
 
+    public static boolean isUserExist(String login) {
+        return getSavedUsers().contains(login);
+    }
+
     public static void addNewUser() {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode newUser = mapper.createObjectNode();

@@ -30,7 +30,7 @@ public class TaskController {
     @FXML
     public void onBackButton() throws IOException{
         System.out.println("backButton");
-        FXRouter.goTo("Menu");
+        FXRouter.goTo("Themes");
         /*Parent root = FXMLLoader.load(getClass().getResource("/learnapp/view/themes.fxml"));
         Scene scene = backButton.getScene();
 

@@ -5,6 +5,7 @@ import com.github.fxrouter.FXRouter;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import learnapp.pojo.Practice;
@@ -19,6 +20,9 @@ import java.io.IOException;
 public class RadioTaskController {
     @FXML
     private AnchorPane practiceAnchorPane;
+
+    @FXML
+    private HBox navigateHBox;
 
     @FXML
     private Button backToMenuBtn;
@@ -49,10 +53,7 @@ public class RadioTaskController {
 
     @FXML
     public void onCheck() {
-        boolean result = radioAnswer.equals(succesAnswer);
-        ProgressService.updateProgress(result);
-
-        System.out.println("In check radioAnswer: " + radioAnswer);
+        checkRadioAnswer();
     }
 
     private String radioAnswer;
@@ -60,7 +61,7 @@ public class RadioTaskController {
 
     public void initialize() {
         initializeRadioButtons();
-        UtilService.showNavigatePanel(practiceAnchorPane);
+        UtilService.showNavigatePanel(navigateHBox);
     }
 
     private void initializeRadioButtons() {
@@ -91,10 +92,19 @@ public class RadioTaskController {
         rad3.setText(practiceObject.getQuestions().get(2));
         rad4.setText(practiceObject.getQuestions().get(3));
 
+        rad1.setSelected(true);
+
         radioExText.setText(practiceObject.getText());
 
         System.out.println();
 
+    }
+
+    private void checkRadioAnswer() {
+        boolean result = radioAnswer.equals(succesAnswer);
+        ProgressService.updateProgress(result);
+
+        System.out.println("In check radioAnswer: " + radioAnswer);
     }
 
 }

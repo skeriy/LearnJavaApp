@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import learnapp.service.DataService;
 import learnapp.service.ProgressService;
 import learnapp.service.RouteService;
@@ -39,7 +40,10 @@ public class TheoryController {
     private FlowPane theoryFlowPane;
 
     @FXML
-    private Text theoryText;
+    private Text theoryNameText;
+
+    @FXML
+    private TextFlow theoryText;
 
     @FXML
     private HBox navigateHBox;
@@ -91,9 +95,10 @@ public class TheoryController {
         JsonNode theoryNode = subThemeNode.path("theory");
         String s = RouteService.getTheory().toString();
         JsonNode n = theoryNode.get(s);
-        theoryText.setText(theoryNode.get(RouteService.getTheory().toString()).asText());
+        theoryNameText.setText(theoryNode.get(RouteService.getTheory().toString()).get("name").asText());
+        theoryText.getChildren().add(new Text(theoryNode.get(RouteService.getTheory().toString()).get("text").asText()));
 
-        UtilService.showNavigatePanel(theoryAnchorPane);
+        UtilService.showNavigatePanel(navigateHBox);
 
         System.out.println();
     }

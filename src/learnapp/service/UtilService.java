@@ -75,11 +75,14 @@ public class UtilService {
         return practiceObject;
     }
 
-    public static void showNavigatePanel(AnchorPane sceneRootLayout) {
-        HBox navigateHBox = new HBox();
+    public static void showNavigatePanel(HBox navigateHBox) {
+
         for (int i = 1; i <= RouteService.getMaxTheory(); i++) {
             int finalId = i;
             Button theoryBtn = new Button("T" + i);
+            if (i > ProgressService.getTheory()) {
+                theoryBtn.setDisable(true);
+            }
             theoryBtn.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
                 try {
                     RouteService.setTheory(finalId);
@@ -96,8 +99,5 @@ public class UtilService {
 
             navigateHBox.getChildren().add(theoryBtn);
         }
-        navigateHBox.setLayoutX(10);
-        navigateHBox.setLayoutY(550);
-        sceneRootLayout.getChildren().add(navigateHBox);
     }
 }

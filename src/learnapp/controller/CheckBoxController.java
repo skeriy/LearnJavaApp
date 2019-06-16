@@ -3,9 +3,11 @@ package learnapp.controller;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.fxrouter.FXRouter;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import learnapp.pojo.Practice;
@@ -20,6 +22,9 @@ import java.util.ArrayList;
 public class CheckBoxController {
     @FXML
     private AnchorPane practiceAnchorPane;
+
+    @FXML
+    private HBox navigateHBox;
 
     @FXML
     private Button backToMenuBtn;
@@ -70,7 +75,7 @@ public class CheckBoxController {
 
         checkBoxExText.setText(practiceObject.getText());
 
-        UtilService.showNavigatePanel(practiceAnchorPane);
+        UtilService.showNavigatePanel(navigateHBox);
     }
 
     private void checkCheckBoxes(){
@@ -89,6 +94,7 @@ public class CheckBoxController {
             checkBoxAnswers.add(check4.getText());
         }
 
+        Alert alert = new Alert(Alert.AlertType.WARNING);
         boolean result = true;
         for (String answer : checkBoxAnswers) {
             if (practiceObject.getSucces().contains(answer)) {

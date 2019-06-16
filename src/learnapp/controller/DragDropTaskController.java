@@ -32,6 +32,9 @@ public class DragDropTaskController {
     private AnchorPane practiceAnchorPane;
 
     @FXML
+    private HBox navigateHBox;
+
+    @FXML
     private VBox codeVBox;
 
     @FXML
@@ -53,21 +56,9 @@ public class DragDropTaskController {
 
     @FXML
     public void onCheck() {
-        boolean result = true;
-        for (int i = 0; i < allCheckedFields.size(); i++) {
-            Text text =(Text) allCheckedFields.get(i).getChildren().get(0);
-            if (!text.getText().equals(practiceObject.getSucces().get(i))) {
-                result = false;
-            }
-        }
-        System.out.println("on check: " + result);
-
-        ProgressService.updateProgress(result);
+        checkFields();
     }
 
-    private Button answerBtn1;
-    private Button answerBtn2;
-    private HBox fieldHBox;
     private Practice practiceObject;
     private ArrayList<HBox> allCheckedFields = new ArrayList<>();
 
@@ -110,7 +101,7 @@ public class DragDropTaskController {
 
         dragDropExText.setText(practiceObject.getText());
 
-        UtilService.showNavigatePanel(practiceAnchorPane);
+        UtilService.showNavigatePanel(navigateHBox);
 
     }
 
@@ -199,6 +190,19 @@ public class DragDropTaskController {
         }
 
         event.consume();
+    }
+
+    private void checkFields() {
+        boolean result = true;
+        for (int i = 0; i < allCheckedFields.size(); i++) {
+            Text text =(Text) allCheckedFields.get(i).getChildren().get(0);
+            if (!text.getText().equals(practiceObject.getSucces().get(i))) {
+                result = false;
+            }
+        }
+        System.out.println("on check: " + result);
+
+        ProgressService.updateProgress(result);
     }
 
     private Image textToImage(String text) {
