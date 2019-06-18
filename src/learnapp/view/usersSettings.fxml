@@ -17,12 +17,12 @@
       <Button fx:id="backToMenuBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="На главный экран" />
       <TableView fx:id="usersTable" layoutX="50.0" layoutY="145.0" prefHeight="380.0" prefWidth="700.0">
         <columns>
-          <TableColumn fx:id="userNameColumn" editable="false" prefWidth="379.0" text="Имя пользователя" />
-            <TableColumn fx:id="themeColumn" editable="false" prefWidth="52.0" style="-fx-alignment: CENTER;" text="Тема" />
-            <TableColumn fx:id="subThemeColumn" editable="false" prefWidth="71.0" style="-fx-alignment: CENTER;" text="Подтема" />
-            <TableColumn fx:id="theoryColumn" editable="false" prefWidth="58.0" style="-fx-alignment: CENTER;" text="Теория" />
+          <TableColumn fx:id="userNameColumn" editable="false" prefWidth="368.0" text="Имя пользователя" />
+            <TableColumn fx:id="themeColumn" editable="false" prefWidth="54.0" style="-fx-alignment: CENTER;" text="Тема" />
+            <TableColumn fx:id="subThemeColumn" editable="false" prefWidth="65.0" style="-fx-alignment: CENTER;" text="Подтема" />
+            <TableColumn fx:id="theoryColumn" editable="false" prefWidth="56.0" style="-fx-alignment: CENTER;" text="Теория" />
             <TableColumn fx:id="practiceColumn" editable="false" minWidth="0.0" prefWidth="73.0" style="-fx-alignment: CENTER;" text="Практика" />
-          <TableColumn fx:id="buttonColumn" editable="false" prefWidth="66.0" text="Действие" />
+          <TableColumn fx:id="buttonColumn" editable="false" prefWidth="83.0" text="Действие" />
         </columns>
       </TableView>
    </children>

@@ -8,6 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import learnapp.pojo.Practice;
 import learnapp.service.DataService;
 import learnapp.service.ProgressService;
@@ -31,7 +32,7 @@ public class RadioTaskController {
     private VBox radioBtnBox;
 
     @FXML
-    private Text radioExText;
+    private TextFlow radioExText;
 
     @FXML
     private RadioButton rad1;
@@ -94,7 +95,7 @@ public class RadioTaskController {
 
         rad1.setSelected(true);
 
-        radioExText.setText(practiceObject.getText());
+        radioExText.getChildren().add(new Text(practiceObject.getText()));
 
         System.out.println();
 

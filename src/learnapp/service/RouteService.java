@@ -1,8 +1,5 @@
 package learnapp.service;
 
-import java.util.ArrayList;
-import java.util.Map;
-
 public class RouteService {
     private static Integer theme;
     private static Integer subTheme;
@@ -14,13 +11,6 @@ public class RouteService {
     private static Integer minPractice = 1;
     private static Integer maxTheory;
     private static Integer maxPractice;
-
-    public static void init() {
-        setTheme(ProgressService.getTheme());
-        setSubTheme(ProgressService.getSubTheme());
-        setTheory(ProgressService.getTheory());
-        setPractice(ProgressService.getPractice());
-    }
 
     public static void incTheme() {
         theme++;

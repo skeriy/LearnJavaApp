@@ -5,16 +5,16 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.ProgramListTaskController">
    <children>
       <Button fx:id="backToMenuBtn" layoutX="129.0" layoutY="516.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="назад к темам" />
       <Button fx:id="checkBtn" layoutX="568.0" layoutY="513.0" mnemonicParsing="false" onAction="#onCheck" styleClass="check_btn" text="Проверить" />
       <VBox fx:id="draggableVbox" layoutX="200.0" layoutY="263.0" maxHeight="120.0" prefWidth="400.0" styleClass="practice_result" />
-      <FlowPane layoutX="129.0" layoutY="73.0" prefHeight="93.0" prefWidth="542.0" styleClass="practice_text_box">
+      <FlowPane layoutX="129.0" layoutY="73.0" prefHeight="99.0" prefWidth="548.0" styleClass="practice_text_box">
          <children>
-            <Text fx:id="programListExText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <TextFlow fx:id="programListExText" prefWidth="540.0" />
          </children>
       </FlowPane>
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" />

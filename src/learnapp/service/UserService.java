@@ -34,6 +34,7 @@ public class UserService {
             String practice = progress.path("practice").asText();
             Button button = new Button("Удалить");
             button.setId(name);
+            button.setStyle("-fx-background-color: #ff0000; -fx-text-fill: #ffffff;");
 
             button.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String userName = ((Button) event.getSource()).getId();

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.LoginController">
    <children>
       <TextField fx:id="loginTextField" layoutX="75.0" layoutY="93.0" prefWidth="250.0" />
       <HBox alignment="TOP_CENTER" layoutY="20.0" prefHeight="23.0" prefWidth="400.0">
@@ -32,7 +32,7 @@
       </HBox>
       <HBox alignment="CENTER" layoutY="136.0" prefHeight="43.0" prefWidth="400.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="136.0">
          <children>
-            <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLoginBtn" text="Button" />
+            <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLoginBtn" styleClass="back_btn" text="Button" />
          </children>
       </HBox>
    </children>

@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.RadioTaskController">
    <children>
       <Button fx:id="backToMenuBtn" layoutX="108.0" layoutY="483.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="backToMenu" />
-      <VBox fx:id="radioBtnBox" layoutX="108.0" layoutY="300.0" prefHeight="135.0" prefWidth="609.0" styleClass="practice_result">
+      <VBox fx:id="radioBtnBox" layoutX="108.0" layoutY="300.0" prefHeight="148.0" prefWidth="609.0" styleClass="practice_result">
          <children>
             <RadioButton fx:id="rad1" mnemonicParsing="false" text="r1">
                <VBox.margin>
@@ -37,9 +37,9 @@
          </children>
       </VBox>
       <Button fx:id="checkBtn" layoutX="614.0" layoutY="480.0" mnemonicParsing="false" onAction="#onCheck" styleClass="check_btn" text="Проверить" />
-      <FlowPane layoutX="108.0" layoutY="148.0" prefHeight="112.0" prefWidth="609.0" styleClass="practice_text_box">
+      <FlowPane layoutX="108.0" layoutY="95.0" maxWidth="609.0" prefHeight="112.0" prefWidth="609.0" styleClass="practice_text_box">
          <children>
-            <Text fx:id="radioExText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <TextFlow fx:id="radioExText" maxWidth="600.0" prefWidth="600.0" />
          </children>
       </FlowPane>
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" />

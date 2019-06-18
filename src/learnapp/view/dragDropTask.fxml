@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.DragDropTaskController">
    <children>
@@ -15,7 +15,7 @@
       <HBox fx:id="answersHBox" layoutX="179.0" layoutY="454.0" prefHeight="42.0" prefWidth="442.0" />
       <FlowPane layoutX="161.0" layoutY="154.0" prefHeight="17.0" prefWidth="470.0" styleClass="practice_text_box" stylesheets="@../style/style.css">
          <children>
-            <Text fx:id="dragDropExText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <TextFlow fx:id="dragDropExText" prefWidth="470.0" />
          </children>
       </FlowPane>
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" />

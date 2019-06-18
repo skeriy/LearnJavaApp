@@ -3,6 +3,7 @@ package learnapp.controller;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.fxrouter.FXRouter;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -90,6 +91,8 @@ public class SubThemesController {
         for (Button button : subThemesButtons) {
             subThemesVBox.getChildren().add(button);
         }
+
+        subThemesVBox.setSpacing(5);
 
     }
 

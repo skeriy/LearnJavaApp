@@ -18,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import learnapp.pojo.Practice;
 import learnapp.service.DataService;
 import learnapp.service.ProgressService;
@@ -47,7 +48,7 @@ public class DragDropTaskController {
     private Button checkBtn;
 
     @FXML
-    private Text dragDropExText;
+    private TextFlow dragDropExText;
 
     @FXML
     public void onBackToMenu() throws IOException {
@@ -99,7 +100,7 @@ public class DragDropTaskController {
             answersHBox.getChildren().add(answerBtn);
         }
 
-        dragDropExText.setText(practiceObject.getText());
+        dragDropExText.getChildren().add(new Text(practiceObject.getText()));
 
         UtilService.showNavigatePanel(navigateHBox);
 
@@ -134,7 +135,7 @@ public class DragDropTaskController {
         ClipboardContent content = new ClipboardContent();
         content.putString(sourceText);
 
-        dragboard.setDragView(textToImage(sourceText));
+        dragboard.setDragView(UtilService.textToImage(sourceText));
 
         dragboard.setContent(content);
         event.consume();
@@ -203,20 +204,6 @@ public class DragDropTaskController {
         System.out.println("on check: " + result);
 
         ProgressService.updateProgress(result);
-    }
-
-    private Image textToImage(String text) {
-        Label label = new Label(text);
-        label.setPadding(new Insets(0,0,0,20));
-        label.setMinSize(125, 25);
-        label.setMaxSize(125, 25);
-        label.setPrefSize(125, 25);
-        label.setStyle("-fx-background-color: green; -fx-text-fill:black;");
-        label.setWrapText(true);
-        Scene scene = new Scene(new Group(label));
-        WritableImage img = new WritableImage(125, 25) ;
-        scene.snapshot(img);
-        return img ;
     }
 
 }

@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import learnapp.pojo.Practice;
 import learnapp.service.DataService;
 import learnapp.service.ProgressService;
@@ -33,7 +34,7 @@ public class CheckBoxController {
     private VBox checkBtnBox;
 
     @FXML
-    private Text checkBoxExText;
+    private TextFlow checkBoxExText;
 
     @FXML
     private CheckBox check1;
@@ -73,7 +74,7 @@ public class CheckBoxController {
         check3.setText(practiceObject.getQuestions().get(2));
         check4.setText(practiceObject.getQuestions().get(3));
 
-        checkBoxExText.setText(practiceObject.getText());
+        checkBoxExText.getChildren().add(new Text(practiceObject.getText()));
 
         UtilService.showNavigatePanel(navigateHBox);
     }

@@ -6,12 +6,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableListBase;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import learnapp.pojo.Practice;
 import learnapp.service.DataService;
 import learnapp.service.ProgressService;
@@ -38,7 +40,7 @@ public class InputTextController {
     private Button checkBtn;
 
     @FXML
-    private Text inputTextExText;
+    private TextFlow inputTextExText;
 
     @FXML
     public void onBackToMenu() throws IOException {
@@ -73,10 +75,11 @@ public class InputTextController {
             } else {
                 row.getChildren().add(new Text(practiceObject.getRowsMap().get(i).get(0)));
             }
+            row.setAlignment(Pos.CENTER_LEFT);
             codeVBox.getChildren().add(row);
         }
 
-        inputTextExText.setText(practiceObject.getText());
+        inputTextExText.getChildren().add(new Text(practiceObject.getText()));
 
         UtilService.showNavigatePanel(navigateHBox);
     }

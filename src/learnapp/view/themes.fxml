@@ -37,17 +37,12 @@
                   <Insets top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Theme5Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme5" prefHeight="26.0" prefWidth="315.0" text="5. Работа со строками">
+            <Button fx:id="Theme6Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme6" prefHeight="26.0" prefWidth="315.0" text="5. Списки">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Theme6Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme6" prefHeight="26.0" prefWidth="315.0" text="6. Списки">
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="Theme7Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme7" prefHeight="26.0" prefWidth="315.0" text="7. Работа с файлами">
+            <Button fx:id="Theme7Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme7" prefHeight="26.0" prefWidth="315.0" text="6. Работа с файлами">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>

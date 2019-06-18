@@ -9,7 +9,7 @@
     -fx-background-color: #ffffff;
     -fx-border-color: #cccccc;
     -fx-border-width: 4;
-    -fx-font-size: 14;
+    -fx-font-size: 16;
 }
 
 .check_btn {
@@ -27,3 +27,4 @@
 .theory_text {
     -fx-font-size: 14;
 }
+

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.InputTextController">
    <children>
@@ -14,7 +14,7 @@
       <VBox fx:id="codeVBox" layoutX="154.0" layoutY="196.0" prefHeight="250.0" prefWidth="493.0" styleClass="practice_result" />
       <FlowPane layoutX="154.0" layoutY="98.0" prefHeight="56.0" prefWidth="493.0" styleClass="practice_text_box">
          <children>
-            <Text fx:id="inputTextExText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <TextFlow fx:id="inputTextExText" prefWidth="490.0" />
          </children>
       </FlowPane>
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" />

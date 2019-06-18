@@ -22,6 +22,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import learnapp.pojo.Practice;
 import learnapp.service.DataService;
 import learnapp.service.ProgressService;
@@ -49,7 +50,7 @@ public class ProgramListTaskController {
     private Button checkBtn;
 
     @FXML
-    private Text programListExText;
+    private TextFlow programListExText;
 
     @FXML
     public void onBackToMenu() throws IOException {
@@ -72,7 +73,7 @@ public class ProgramListTaskController {
 
         practiceObject = UtilService.convertJsonNodeToPractice(practice);
 
-        programListExText.setText(practiceObject.getText());
+        programListExText.getChildren().add(new Text(practiceObject.getText()));
 
         answersObsList.addAll(practiceObject.getQuestions());
 
@@ -103,7 +104,7 @@ public class ProgramListTaskController {
                 Dragboard dragboard = startDragAndDrop(TransferMode.MOVE);
                 ClipboardContent content = new ClipboardContent();
                 content.putString(getItem());
-                dragboard.setDragView(textToImage(answersObsList.get(items.indexOf(getItem()))));
+                dragboard.setDragView(UtilService.textToImage(answersObsList.get(items.indexOf(getItem()))));
                 dragboard.setContent(content);
 
                 event.consume();
@@ -178,20 +179,6 @@ public class ProgramListTaskController {
                 System.out.println(item);
                 System.out.println("update");
             }
-        }
-
-        private Image textToImage(String text) {
-            Label label = new Label(text);
-            label.setPadding(new Insets(0,0,0,20));
-            label.setMinSize(125, 25);
-            label.setMaxSize(125, 25);
-            label.setPrefSize(125, 25);
-            label.setStyle("-fx-background-color: green; -fx-text-fill:black;");
-            label.setWrapText(true);
-            Scene scene = new Scene(new Group(label));
-            WritableImage img = new WritableImage(125, 25) ;
-            scene.snapshot(img);
-            return img ;
         }
     }
 
