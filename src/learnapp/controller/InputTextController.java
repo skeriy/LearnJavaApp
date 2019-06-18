@@ -91,7 +91,6 @@ public class InputTextController {
                 result = false;
             }
         }
-        System.out.println("on check: " + result);
 
         ProgressService.updateProgress(result);
     }

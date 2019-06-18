@@ -28,3 +28,7 @@
     -fx-font-size: 14;
 }
 
+.theme_button {
+    -fx-background-color: rgba(102, 218, 255, 0.85);
+}
+

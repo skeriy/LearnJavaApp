@@ -78,7 +78,6 @@ public class TheoryController {
                     break;
             }
 
-            System.out.println();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -100,6 +99,5 @@ public class TheoryController {
 
         UtilService.showNavigatePanel(navigateHBox);
 
-        System.out.println();
     }
 }

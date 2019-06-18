@@ -17,39 +17,38 @@
       </Text>
       <VBox fx:id="themesVBox" layoutX="275.0" layoutY="188.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="250.0">
          <children>
-            <Button fx:id="Theme1Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme1" prefHeight="26.0" prefWidth="325.0" text="1. Основные понятия">
+            <Button fx:id="Theme1Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme1" prefHeight="26.0" prefWidth="325.0" styleClass="theme_button" text="1. Основные понятия">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Theme2Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme2" prefHeight="26.0" prefWidth="315.0" text="2. Условные операторы и циклы">
+            <Button fx:id="Theme2Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme2" prefHeight="26.0" prefWidth="315.0" styleClass="theme_button" text="2. Условные операторы и циклы">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Theme3Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme3" prefHeight="26.0" prefWidth="315.0" text="3. Массивы">
+            <Button fx:id="Theme3Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme3" prefHeight="26.0" prefWidth="315.0" styleClass="theme_button" text="3. Массивы">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Theme4Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme4" prefHeight="26.0" prefWidth="315.0" text="4. Классы и объекты">
+            <Button fx:id="Theme4Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme4" prefHeight="26.0" prefWidth="315.0" styleClass="theme_button" text="4. Классы и объекты">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Theme6Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme6" prefHeight="26.0" prefWidth="315.0" text="5. Списки">
+            <Button fx:id="Theme6Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme6" prefHeight="26.0" prefWidth="315.0" styleClass="theme_button" text="5. Списки">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Theme7Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme7" prefHeight="26.0" prefWidth="315.0" text="6. Работа с файлами">
+            <Button fx:id="Theme7Btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onTheme7" prefHeight="26.0" prefWidth="315.0" styleClass="theme_button" text="6. Работа с файлами">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Button>
          </children>
       </VBox>
-      <Button fx:id="progressToDefaultBtn" layoutX="665.0" layoutY="14.0" mnemonicParsing="false" onAction="#setProgressToDefault" text="Очистить прогресс" />
       <HBox alignment="TOP_CENTER" layoutX="20.0" layoutY="14.0" prefHeight="26.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Пользователь:">

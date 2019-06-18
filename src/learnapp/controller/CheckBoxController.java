@@ -59,7 +59,6 @@ public class CheckBoxController {
     @FXML
     public void onCheck() {
         checkCheckBoxes();
-        System.out.println("In check CheckBoxAnswer: " + checkBoxAnswersToString());
     }
 
     public void initialize() {
@@ -99,10 +98,8 @@ public class CheckBoxController {
         boolean result = true;
         for (String answer : checkBoxAnswers) {
             if (practiceObject.getSucces().contains(answer)) {
-                System.out.println("CHECK_OK");
                 continue;
             } else {
-                System.out.println("CHECK_NO");
                 result = false;
                 break;
             }

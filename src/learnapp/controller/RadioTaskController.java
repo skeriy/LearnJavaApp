@@ -79,7 +79,6 @@ public class RadioTaskController {
             if (toggleGroup.getSelectedToggle() != null) {
                 RadioButton button = (RadioButton) toggleGroup.getSelectedToggle();
                 radioAnswer = button.getText();
-                System.out.println("Button: " + radioAnswer);
             }
         });
 
@@ -97,7 +96,6 @@ public class RadioTaskController {
 
         radioExText.getChildren().add(new Text(practiceObject.getText()));
 
-        System.out.println();
 
     }
 
@@ -105,7 +103,6 @@ public class RadioTaskController {
         boolean result = radioAnswer.equals(succesAnswer);
         ProgressService.updateProgress(result);
 
-        System.out.println("In check radioAnswer: " + radioAnswer);
     }
 
 }

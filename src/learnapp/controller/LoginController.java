@@ -83,7 +83,6 @@ public class LoginController {
             alert.setHeaderText(null);
             alert.setContentText("Введите логин");
             alert.showAndWait();
-            System.out.println("");
         } else {
             String login = loginTextField.getText();
             LoginService.setLogin(login);
@@ -113,7 +112,6 @@ public class LoginController {
                     alert.setHeaderText(null);
                     alert.setContentText("Пользователь с таким именем уже существует");
                     alert.showAndWait();
-                    System.out.println("Name exist");
                     loginTextField.setText("");
                 } else {
                     LoginService.addNewUser();

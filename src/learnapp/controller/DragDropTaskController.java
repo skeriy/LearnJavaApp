@@ -117,7 +117,6 @@ public class DragDropTaskController {
             btn = (Button) objectBtn;
             sourceText = btn.getText() ;
         } else {
-            System.out.println("Not button");
             event.consume();
             return;
         }
@@ -146,7 +145,6 @@ public class DragDropTaskController {
         // If drag board has a string, let the event know that
         // the target accepts copy and move transfer modes
         Dragboard dragboard = event.getDragboard();
-        System.out.println("over");
         if (dragboard.hasString())
         {
             event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
@@ -162,7 +160,6 @@ public class DragDropTaskController {
 
         if (dragboard.hasString())
         {
-            System.out.println(dragboard.getString());
             Text t = new Text(dragboard.getString());
             HBox hBox = (HBox) event.getSource();
             hBox.getChildren().clear();
@@ -201,7 +198,6 @@ public class DragDropTaskController {
                 result = false;
             }
         }
-        System.out.println("on check: " + result);
 
         ProgressService.updateProgress(result);
     }

@@ -66,6 +66,7 @@ public class SubThemesController {
 
             Button button = new Button(entry.getValue());
             button.setPrefWidth(subThemesVBox.getPrefWidth());
+            button.setStyle("-fx-background-color: rgba(102, 218, 255, 0.85);");
 
             if (ProgressService.getTheme() == RouteService.getTheme() && Integer.valueOf(subThemeId) > ProgressService.getSubTheme()){
                 button.setDisable(true);

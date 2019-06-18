@@ -172,12 +172,9 @@ public class ProgramListTaskController {
 
             if (empty || item == null) {
                 setGraphic(null);
-                System.out.println("empty");
             } else {
                 text.setText(item);
                 setGraphic(text);
-                System.out.println(item);
-                System.out.println("update");
             }
         }
     }
@@ -190,7 +187,6 @@ public class ProgramListTaskController {
                 result = false;
             }
         }
-        System.out.println("on check: " + result);
 
         ProgressService.updateProgress(result);
     }

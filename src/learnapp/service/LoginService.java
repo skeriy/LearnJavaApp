@@ -37,8 +37,6 @@ public class LoginService {
         newUser.set(LoginService.getLogin(), properties);
         ((ObjectNode) DataService.getRootProgress()).setAll(newUser);
         JsonNode jsonNode = DataService.getRootProgress();
-
-        System.out.println();
     }
 
     public static String getState() {

@@ -60,11 +60,8 @@ public class ProgressService {
     public static void updateProgress(boolean resultOfCheckPractice) {
         try {
             if (resultOfCheckPractice) {
-                System.out.println("OK");
                 if (RouteService.getTheory().equals(RouteService.getMaxTheory())) {
-                    System.out.println("THEME " + RouteService.getTheme() + " SUBTHEME " + RouteService.getSubTheme() + " DONE! GO ALL SUBTHEMES!");
                     if (ProgressService.getSubTheme() == RouteService.getSubTheme()){
-                        System.out.println("\n\nINCREMENTED ");
                         ProgressService.incSubTheme();
                     }
                     if (ProgressService.getLastSuccessSubTheme() == RouteService.getSubTheme()) {
@@ -87,12 +84,7 @@ public class ProgressService {
                 alert.setHeaderText(null);
                 alert.setContentText("Задание решено неправильно. Поробуйте еще раз.");
 
-                /*alert.setX(((DataService.getMainStage().getX() + (800 - alert.getWidth()) / 2)));
-                alert.setY(((DataService.getMainStage().getY() + (600 - alert.getHeight()) / 2)));*/
-
                 alert.showAndWait();
-                System.out.println("NO");
-//                FXRouter.goTo("theory");
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -117,7 +109,6 @@ public class ProgressService {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            System.out.println(s);
         }
     }
 
