@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane fx:id="theoryAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.TheoryController">
+<AnchorPane fx:id="theoryAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.TheoryController">
    <children>
-      <Text fx:id="theoryNameText" layoutX="66.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Теория" />
-      <FlowPane fx:id="theoryFlowPane" layoutX="66.0" layoutY="129.0" prefHeight="326.0" prefWidth="669.0">
-         <children>
-            <TextFlow fx:id="theoryText" prefHeight="21.0" prefWidth="670.0" />
-         </children>
-      </FlowPane>
-      <Button fx:id="goToPracticeBtn" layoutX="667.0" layoutY="538.0" mnemonicParsing="false" onAction="#onGoToPractice" text="Дальше" />
-      <Button fx:id="backToSubThemesBtn" layoutX="32.0" layoutY="538.0" mnemonicParsing="false" onAction="#onBackToSubThemes" text="Вернуться к темам" />
+      <Text fx:id="theoryNameText" layoutX="66.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Теория">
+         <font>
+            <Font size="26.0" />
+         </font></Text>
+      <Button fx:id="goToPracticeBtn" layoutX="665.0" layoutY="526.0" mnemonicParsing="false" onAction="#onGoToPractice" styleClass="check_btn" text="Дальше" />
+      <Button fx:id="backToSubThemesBtn" layoutX="57.0" layoutY="526.0" mnemonicParsing="false" onAction="#onBackToSubThemes" styleClass="back_btn" text="Вернуться к темам" />
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" layoutY="1.0" prefHeight="40.0" prefWidth="800.0" />
+      <ScrollPane layoutX="57.0" layoutY="112.0" prefHeight="377.0" prefWidth="687.0">
+         <content>
+            <FlowPane fx:id="theoryFlowPane" prefHeight="368.0" prefWidth="670.0" style="-fx-background-color: #ffffff;" styleClass="theory_text">
+               <children>
+                  <TextFlow fx:id="theoryText" prefHeight="21.0" prefWidth="670.0" />
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </FlowPane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

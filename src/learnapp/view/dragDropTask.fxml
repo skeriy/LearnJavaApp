@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.DragDropTaskController">
+<AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.DragDropTaskController">
    <children>
-      <Button fx:id="backToMenuBtn" layoutX="23.0" layoutY="550.0" mnemonicParsing="false" onAction="#onBackToMenu" text="backToMenu" />
-      <Button fx:id="checkBtn" layoutX="727.0" layoutY="550.0" mnemonicParsing="false" onAction="#onCheck" text="Check" />
-      <VBox fx:id="codeVBox" layoutX="108.0" layoutY="249.0" prefHeight="200.0" prefWidth="619.0" />
-      <HBox fx:id="answersHBox" layoutX="179.0" layoutY="486.0" prefHeight="42.0" prefWidth="442.0" />
-      <FlowPane layoutX="125.0" layoutY="62.0" prefHeight="200.0" prefWidth="571.0">
+      <Button fx:id="backToMenuBtn" layoutX="106.0" layoutY="518.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="назад к темам" />
+      <Button fx:id="checkBtn" layoutX="580.0" layoutY="514.0" mnemonicParsing="false" onAction="#onCheck" styleClass="check_btn" text="Проверить" />
+      <VBox fx:id="codeVBox" layoutX="161.0" layoutY="240.0" prefHeight="200.0" prefWidth="470.0" styleClass="practice_result" />
+      <HBox fx:id="answersHBox" layoutX="179.0" layoutY="454.0" prefHeight="42.0" prefWidth="442.0" />
+      <FlowPane layoutX="161.0" layoutY="154.0" prefHeight="17.0" prefWidth="470.0" styleClass="practice_text_box" stylesheets="@../style/style.css">
          <children>
             <Text fx:id="dragDropExText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
          </children>

@@ -7,35 +7,39 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.CheckBoxController">
+<AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.CheckBoxController">
    <children>
-      <Button fx:id="backToMenuBtn" layoutX="27.0" layoutY="515.0" mnemonicParsing="false" onAction="#onBackToMenu" text="backToMenu" />
-      <Button fx:id="checkBtn" layoutX="705.0" layoutY="540.0" mnemonicParsing="false" onAction="#onCheck" prefWidth="52.0" text="Check" />
-      <VBox fx:id="checkBtnBox" layoutX="93.0" layoutY="366.0" prefHeight="124.0" prefWidth="544.0">
+      <Button fx:id="backToMenuBtn" layoutX="109.0" layoutY="519.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="назад к темам" />
+      <Button fx:id="checkBtn" layoutX="598.0" layoutY="516.0" mnemonicParsing="false" onAction="#onCheck" styleClass="check_btn" text="Проверить" />
+      <VBox fx:id="checkBtnBox" layoutX="152.0" layoutY="348.0" prefHeight="135.0" prefWidth="497.0" styleClass="practice_result">
          <children>
             <CheckBox fx:id="check1" mnemonicParsing="false" text="Check1">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets left="10.0" top="10.0" />
                </VBox.margin></CheckBox>
             <CheckBox fx:id="check2" mnemonicParsing="false" text="Check2">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets left="10.0" top="10.0" />
                </VBox.margin></CheckBox>
             <CheckBox fx:id="check3" mnemonicParsing="false" text="Check3">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets left="10.0" top="10.0" />
                </VBox.margin></CheckBox>
             <CheckBox fx:id="check4" mnemonicParsing="false" text="Check4">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets left="10.0" top="10.0" />
                </VBox.margin></CheckBox>
          </children>
       </VBox>
-      <FlowPane layoutX="93.0" layoutY="77.0" prefHeight="240.0" prefWidth="604.0">
+      <FlowPane layoutX="153.0" layoutY="198.0" prefWidth="497.0" style="-fx-background-color: #ffffff;" styleClass="practice_text_box">
          <children>
-            <Text fx:id="checkBoxExText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="checkBoxExText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
          </children>
       </FlowPane>
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" />

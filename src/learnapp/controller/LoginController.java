@@ -1,12 +1,15 @@
 package learnapp.controller;
 
 import com.github.fxrouter.FXRouter;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -32,6 +35,48 @@ public class LoginController {
 
     @FXML
     public void onLoginBtn() {
+        onLoginAction();
+    }
+
+    @FXML
+    public void onLoginLink() {
+        try {
+            if (LoginService.getState().equals("login")) {
+                LoginService.setState("register");
+                FXRouter.goTo("LoginOrRegister");
+            } else {
+                LoginService.setState("login");
+                FXRouter.goTo("LoginOrRegister");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public void initialize() {
+        if (LoginService.getState().equals("login")) {
+            loginTitleText.setText("Авторизация");
+            loginLink.setText("Создать нового пользователя");
+            loginBtn.setText("Войти");
+        } else {
+            loginTitleText.setText("Создание нового пользователя");
+            loginLink.setText("Войти");
+            loginBtn.setText("Создать");
+        }
+
+        loginTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    onLoginAction();
+                }
+            }
+        });
+    }
+
+    private void onLoginAction() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         if (loginTextField.getText().isEmpty()) {
             alert.setTitle("Ошибка авторизации");
@@ -82,35 +127,6 @@ public class LoginController {
                 }
             }
 
-        }
-
-    }
-
-    @FXML
-    public void onLoginLink() {
-        try {
-            if (LoginService.getState().equals("login")) {
-                LoginService.setState("register");
-                FXRouter.goTo("LoginOrRegister");
-            } else {
-                LoginService.setState("login");
-                FXRouter.goTo("LoginOrRegister");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void initialize() {
-        if (LoginService.getState().equals("login")) {
-            loginTitleText.setText("Авторизация");
-            loginLink.setText("Создать нового пользователя");
-            loginBtn.setText("Войти");
-        } else {
-            loginTitleText.setText("Создание нового пользователя");
-            loginLink.setText("Войти");
-            loginBtn.setText("Создать");
         }
     }
 

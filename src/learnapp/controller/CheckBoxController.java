@@ -52,7 +52,7 @@ public class CheckBoxController {
 
     @FXML
     public void onBackToMenu() throws IOException {
-        FXRouter.goTo("Themes");
+        FXRouter.goTo("SubThemes");
     }
 
     @FXML

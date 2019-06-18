@@ -42,7 +42,7 @@ public class InputTextController {
 
     @FXML
     public void onBackToMenu() throws IOException {
-        FXRouter.goTo("Themes");
+        FXRouter.goTo("SubThemes");
     }
 
     @FXML
@@ -71,7 +71,7 @@ public class InputTextController {
                 ArrayList<String> subStrings = practiceObject.getRowsMap().get(i);
                 row.getChildren().addAll(new Text(subStrings.get(0)), textField, new Text(subStrings.get(1)));
             } else {
-                row.getChildren().add(new Text(practiceObject.getRowsMap().get(rowCount).get(0)));
+                row.getChildren().add(new Text(practiceObject.getRowsMap().get(i).get(0)));
             }
             codeVBox.getChildren().add(row);
         }

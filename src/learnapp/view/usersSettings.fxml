@@ -7,14 +7,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.UsersSettingsController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.UsersSettingsController">
    <children>
       <Text layoutX="50.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пользователи">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <Button fx:id="backToMenuBtn" layoutY="2.0" mnemonicParsing="false" onAction="#onBackToMenu" text="На главный экран" />
+      <Button fx:id="backToMenuBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="На главный экран" />
       <TableView fx:id="usersTable" layoutX="50.0" layoutY="145.0" prefHeight="380.0" prefWidth="700.0">
         <columns>
           <TableColumn fx:id="userNameColumn" editable="false" prefWidth="379.0" text="Имя пользователя" />
