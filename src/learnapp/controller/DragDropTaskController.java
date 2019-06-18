@@ -108,8 +108,7 @@ public class DragDropTaskController {
 
     private void dragDetected(MouseEvent event)
     {
-        // User can drag only when there is text in the source field
-//        String sourceText = answerBtn1.getText();
+
         Object objectBtn = event.getSource();
         Button btn;
         String sourceText;
@@ -121,16 +120,9 @@ public class DragDropTaskController {
             return;
         }
 
-//        if (sourceText == null || sourceText.trim().equals(""))
-//        {
-//            event.consume();
-//            return;
-//        }
-
-        // Initiate a drag-and-drop gesture
         Dragboard dragboard = btn.startDragAndDrop(TransferMode.COPY);
 
-        // Add the source text to the Dragboard
+
         ClipboardContent content = new ClipboardContent();
         content.putString(sourceText);
 
@@ -142,8 +134,6 @@ public class DragDropTaskController {
 
     private void dragOver(DragEvent event)
     {
-        // If drag board has a string, let the event know that
-        // the target accepts copy and move transfer modes
         Dragboard dragboard = event.getDragboard();
         if (dragboard.hasString())
         {
@@ -155,7 +145,6 @@ public class DragDropTaskController {
 
     private void dragDropped(DragEvent event)
     {
-        // Transfer the data to the target
         Dragboard dragboard = event.getDragboard();
 
         if (dragboard.hasString())
@@ -165,12 +154,10 @@ public class DragDropTaskController {
             hBox.getChildren().clear();
             hBox.getChildren().add(t);
 
-            // Data transfer is successful
             event.setDropCompleted(true);
         }
         else
         {
-            // Data transfer is not successful
             event.setDropCompleted(false);
         }
 
@@ -179,13 +166,7 @@ public class DragDropTaskController {
 
     private void dragDone(DragEvent event)
     {
-        // Check how data was transfered to the target. If it was moved, clear the text in the source.
         TransferMode modeUsed = event.getTransferMode();
-
-        if (modeUsed == TransferMode.MOVE)
-        {
-//            sourceFld.setText("");
-        }
 
         event.consume();
     }

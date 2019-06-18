@@ -146,10 +146,6 @@ public class ProgramListTaskController {
                     int draggedIdx = items.indexOf(db.getString());
                     int thisIdx = items.indexOf(getItem());
 
-                    /*Image temp = answersObsList.get(draggedIdx);
-                    answersObsList.set(draggedIdx, answersObsList.get(thisIdx));
-                    answersObsList.set(thisIdx, temp);*/
-
                     items.set(draggedIdx, getItem());
                     items.set(thisIdx, db.getString());
 
