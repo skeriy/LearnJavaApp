@@ -61,7 +61,7 @@ public class LoginController {
             loginLink.setText("Создать нового пользователя");
             loginBtn.setText("Войти");
         } else {
-            loginTitleText.setText("Создание нового пользователя");
+            loginTitleText.setText("Регистрация");
             loginLink.setText("Войти");
             loginBtn.setText("Создать");
         }

@@ -12,7 +12,7 @@
 <AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.RadioTaskController">
    <children>
       <Button fx:id="backToMenuBtn" layoutX="108.0" layoutY="483.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="backToMenu" />
-      <VBox fx:id="radioBtnBox" layoutX="108.0" layoutY="300.0" prefHeight="148.0" prefWidth="609.0" styleClass="practice_result">
+      <VBox fx:id="radioBtnBox" layoutX="108.0" layoutY="300.0" prefHeight="158.0" prefWidth="609.0" styleClass="practice_result">
          <children>
             <RadioButton fx:id="rad1" mnemonicParsing="false" text="r1">
                <VBox.margin>

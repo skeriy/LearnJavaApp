@@ -15,7 +15,7 @@ public class Main extends Application {
         stage.setResizable(false);
         stage.setOnCloseRequest(event -> ProgressService.saveProgressToFile());
 
-        FXRouter.bind(this, stage, "JavaLearn", 400, 200);
+        FXRouter.bind(this, stage, "Обучение Java", 400, 200);
         FXRouter.setAnimationType("fade", 500);
 
         FXRouter.when("LoginOrRegister", "view/login.fxml");

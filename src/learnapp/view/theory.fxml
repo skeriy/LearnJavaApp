@@ -16,7 +16,7 @@
          <font>
             <Font size="26.0" />
          </font></Text>
-      <Button fx:id="goToPracticeBtn" layoutX="665.0" layoutY="526.0" mnemonicParsing="false" onAction="#onGoToPractice" styleClass="check_btn" text="Дальше" />
+      <Button fx:id="goToPracticeBtn" layoutX="665.0" layoutY="522.0" mnemonicParsing="false" onAction="#onGoToPractice" styleClass="check_btn" text="Дальше" />
       <Button fx:id="backToSubThemesBtn" layoutX="57.0" layoutY="526.0" mnemonicParsing="false" onAction="#onBackToSubThemes" styleClass="back_btn" text="Вернуться к темам" />
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" layoutY="1.0" prefHeight="40.0" prefWidth="800.0" />
       <ScrollPane layoutX="57.0" layoutY="112.0" prefHeight="377.0" prefWidth="687.0">
