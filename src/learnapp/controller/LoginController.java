@@ -117,8 +117,8 @@ public class LoginController {
                     LoginService.addNewUser();
                     LoginService.setState("login");
                     try {
-                        setWindowToCenter();
                         FXRouter.goTo("Themes");
+                        setWindowToCenter();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

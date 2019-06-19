@@ -88,11 +88,6 @@ public class ThemesController {
         RouteService.setTheme(6);
         FXRouter.goTo("SubThemes");
     }
-    @FXML
-    public void onTheme7() throws IOException {
-        RouteService.setTheme(7);
-        FXRouter.goTo("SubThemes");
-    }
 
     public void initialize() {
         LoginService.setState("RunProgram");
