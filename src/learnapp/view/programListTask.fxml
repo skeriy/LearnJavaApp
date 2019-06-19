@@ -12,9 +12,13 @@
       <Button fx:id="backToMenuBtn" layoutX="129.0" layoutY="516.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="назад к темам" />
       <Button fx:id="checkBtn" layoutX="568.0" layoutY="513.0" mnemonicParsing="false" onAction="#onCheck" styleClass="check_btn" text="Проверить" />
       <VBox fx:id="draggableVbox" layoutX="200.0" layoutY="263.0" maxHeight="120.0" prefWidth="400.0" styleClass="practice_result" />
-      <FlowPane layoutX="129.0" layoutY="73.0" prefHeight="99.0" prefWidth="548.0" styleClass="practice_text_box">
+      <FlowPane columnHalignment="CENTER" layoutX="129.0" layoutY="73.0" prefHeight="147.0" prefWidth="548.0" rowValignment="BASELINE" styleClass="practice_text_box">
          <children>
-            <TextFlow fx:id="programListExText" prefWidth="540.0" />
+            <VBox alignment="BASELINE_CENTER" prefWidth="540.0">
+               <children>
+                  <TextFlow fx:id="programListExText" prefWidth="540.0" />
+               </children>
+            </VBox>
          </children>
       </FlowPane>
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" />
