@@ -9,8 +9,8 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.SubThemesController">
    <children>
       <Button fx:id="backToMenuBtn" layoutY="1.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" stylesheets="@../style/style.css" text="На главный экран" />
-      <VBox fx:id="subThemesVBox" layoutX="170.0" layoutY="133.0" prefHeight="333.0" prefWidth="460.0" />
-      <Text fx:id="themeText" layoutX="170.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <VBox fx:id="subThemesVBox" layoutX="170.0" layoutY="190.0" prefHeight="333.0" prefWidth="460.0" />
+      <Text fx:id="themeText" layoutX="170.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="30.0" />
          </font>

@@ -78,7 +78,7 @@ public class DragDropTaskController {
             if (practiceObject.getPasteElements().contains(i)) {
                 HBox checkField = new HBox();
                 checkField.setPrefHeight(20);
-                checkField.setPrefWidth(70);
+                checkField.setPrefWidth(60);
                 checkField.setStyle("-fx-background-color: #e7f5ff");
 
                 checkField.setOnDragOver(this::dragOver);
@@ -95,6 +95,9 @@ public class DragDropTaskController {
 
         for (int i = 0; i < answersCount; i++) {
             Button answerBtn = new Button(practiceObject.getQuestions().get(i));
+            answerBtn.setStyle("-fx-background-color: #ffffff; " +
+                                "-fx-border-color: #cccddd; " +
+                                "-fx-border-width: 3");
             answerBtn.setOnDragDetected(this::dragDetected);
             answerBtn.setOnDragDone(this::dragDone);
             answersHBox.getChildren().add(answerBtn);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
@@ -10,12 +11,15 @@
 <AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.DragDropTaskController">
    <children>
       <Button fx:id="backToMenuBtn" layoutX="106.0" layoutY="518.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="назад к темам" />
-      <Button fx:id="checkBtn" layoutX="580.0" layoutY="514.0" mnemonicParsing="false" onAction="#onCheck" styleClass="check_btn" text="Проверить" />
-      <VBox fx:id="codeVBox" layoutX="161.0" layoutY="240.0" prefHeight="200.0" prefWidth="470.0" styleClass="practice_result" />
-      <HBox fx:id="answersHBox" layoutX="179.0" layoutY="454.0" prefHeight="42.0" prefWidth="442.0" />
-      <FlowPane layoutX="161.0" layoutY="154.0" prefHeight="17.0" prefWidth="470.0" styleClass="practice_text_box" stylesheets="@../style/style.css">
+      <Button fx:id="checkBtn" layoutX="585.0" layoutY="518.0" mnemonicParsing="false" onAction="#onCheck" styleClass="check_btn" text="Проверить" />
+      <VBox fx:id="codeVBox" layoutX="161.0" layoutY="185.0" prefHeight="230.0" prefWidth="478.0" styleClass="practice_result" />
+      <HBox fx:id="answersHBox" alignment="BASELINE_CENTER" layoutX="162.0" layoutY="452.0" prefHeight="42.0" prefWidth="478.0" spacing="5.0" stylesheets="@../style/style.css" />
+      <FlowPane layoutX="161.0" layoutY="101.0" prefHeight="58.0" prefWidth="457.0" styleClass="practice_text_box" stylesheets="@../style/style.css">
          <children>
-            <TextFlow fx:id="dragDropExText" prefWidth="470.0" />
+            <TextFlow fx:id="dragDropExText" prefWidth="470.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></TextFlow>
          </children>
       </FlowPane>
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" />

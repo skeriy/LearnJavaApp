@@ -68,7 +68,7 @@ public class InputTextController {
             HBox row = new HBox();
             if (practiceObject.getPasteElements().contains(i)) {
                 TextField textField = new TextField();
-                textField.setPrefWidth(50);
+                textField.setPrefWidth(65);
                 allTextFields.add(textField);
                 ArrayList<String> subStrings = practiceObject.getRowsMap().get(i);
                 row.getChildren().addAll(new Text(subStrings.get(0)), textField, new Text(subStrings.get(1)));

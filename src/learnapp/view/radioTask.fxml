@@ -7,31 +7,36 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="practiceAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learnapp.controller.RadioTaskController">
    <children>
-      <Button fx:id="backToMenuBtn" layoutX="108.0" layoutY="483.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="backToMenu" />
-      <VBox fx:id="radioBtnBox" layoutX="108.0" layoutY="300.0" prefHeight="158.0" prefWidth="609.0" styleClass="practice_result">
+      <Button fx:id="backToMenuBtn" layoutX="108.0" layoutY="480.0" mnemonicParsing="false" onAction="#onBackToMenu" styleClass="back_btn" text="назад">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <VBox fx:id="radioBtnBox" layoutX="108.0" layoutY="300.0" prefHeight="146.0" prefWidth="609.0" styleClass="practice_result">
          <children>
             <RadioButton fx:id="rad1" mnemonicParsing="false" text="r1">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets left="5.0" top="10.0" />
                </VBox.margin>
             </RadioButton>
             <RadioButton fx:id="rad2" mnemonicParsing="false" text="r2">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets left="5.0" top="10.0" />
                </VBox.margin>
             </RadioButton>
             <RadioButton fx:id="rad3" mnemonicParsing="false" text="r3">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets left="5.0" top="10.0" />
                </VBox.margin>
             </RadioButton>
             <RadioButton fx:id="rad4" mnemonicParsing="false" text="r4">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets left="5.0" top="10.0" />
                </VBox.margin>
             </RadioButton>
          </children>
@@ -39,9 +44,13 @@
       <Button fx:id="checkBtn" layoutX="614.0" layoutY="480.0" mnemonicParsing="false" onAction="#onCheck" styleClass="check_btn" text="Проверить" />
       <FlowPane layoutX="108.0" layoutY="95.0" maxWidth="609.0" prefHeight="112.0" prefWidth="609.0" styleClass="practice_text_box">
          <children>
-            <TextFlow fx:id="radioExText" maxWidth="600.0" prefWidth="600.0" />
+            <TextFlow fx:id="radioExText" maxWidth="600.0" prefWidth="600.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></TextFlow>
          </children>
       </FlowPane>
       <HBox fx:id="navigateHBox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" />
+      <Text layoutX="118.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выберите один правильный ответ" />
    </children>
 </AnchorPane>
