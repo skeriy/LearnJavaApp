@@ -10,8 +10,8 @@ import javafx.scene.control.Alert;
 import javafx.stage.Screen;
 
 import javax.xml.crypto.Data;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -103,9 +103,10 @@ public class ProgressService {
             String s = "";
             try {
                 s = mapper.writeValueAsString(DataService.getRootProgress());
-                FileWriter writer = new FileWriter("data/progress.json", false);
-                writer.write(s);
-                writer.close();
+                Writer out = new BufferedWriter(new OutputStreamWriter(
+                        new FileOutputStream("data/progress.json"), StandardCharsets.UTF_8));
+                out.write(s);
+                out.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
